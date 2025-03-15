@@ -3,6 +3,7 @@
   ---
 
 git config user.name "username"
+
 git config user.email "useremail.gmail.com"
 의 명령어로 으로 최초 유저 설정을 할 수 있다
 
