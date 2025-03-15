@@ -38,8 +38,7 @@ git config --list
 
 ![image](https://github.com/user-attachments/assets/5401db62-6bdb-4dc7-a8bf-1949705f276a)
 
-
-
+---
 
 ### node.js를 이용하여 React 개발환경 구축하기
 
@@ -56,12 +55,13 @@ node -v
 
 ![image](https://github.com/user-attachments/assets/d126c600-193b-442e-a103-7468a2bbb43e)
 
-
+---
 
 ### React Projcet 만들기
 
 npx create-react-app react-1
 명령어를 이용해 내가 사용할 working directory를 만들 수 있다.
+
 ![image](https://github.com/user-attachments/assets/cd6c67e6-67a9-4351-8f39-fe63d17e7ea0)
 
 이와 같이 Happy hacking! 이 나온다면 디렉토리가 성공적으로 생성됬다는 의미이다.
@@ -70,6 +70,7 @@ npx create-react-app react-1
 npm start
 명령어를 이용하여 프로젝트의 초기 화면이 웹 브라우저를 통해 나타낼 수 있다.
 
+---
 
 오늘은 이와 같이 git을 설치하고 . git 폴더를 만들어 git을 사용하는 방법에 대해 배웠다
 node js를 설치하고 프로젝트를 만들어 리액트 화면도 출력할 수 있게 되었다.
