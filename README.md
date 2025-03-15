@@ -2,7 +2,7 @@
 
   ---
 
-#### Git 최초 설정하는법 
+### Git 최초 설정하는법 
 
 git을 다운로드 후 git bash에 들어가서
 
@@ -41,7 +41,7 @@ git config --list
 
 
 
-#### node.js를 이용하여 React 개발환경 구축하기
+### node.js를 이용하여 React 개발환경 구축하기
 
 node js를 다운한 후
 
@@ -50,6 +50,7 @@ npx -v
 npm -v
 
 node -v
+
 명령어로 node와 npm 설치 버전 확인한다.
 버전이 뜬다면 성공적으로 설치된 것이다.
 
@@ -57,7 +58,7 @@ node -v
 
 
 
-#### React Projcet 만들기
+### React Projcet 만들기
 
 npx create-react-app react-1
 명령어를 이용해 내가 사용할 working directory를 만들 수 있다.
