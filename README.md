@@ -63,6 +63,7 @@ node -v
 npx create-react-app react-1
 명령어를 이용해 내가 사용할 working directory를 만들 수 있다.
 ![image](https://github.com/user-attachments/assets/cd6c67e6-67a9-4351-8f39-fe63d17e7ea0)
+
 이와 같이 Happy hacking! 이 나온다면 디렉토리가 성공적으로 생성됬다는 의미이다.
 
 폴더를 만들었다면 (Ctrl + K + O) 단축키를 사용해 만든 프로젝트 폴더를 연 뒤
