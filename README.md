@@ -34,7 +34,7 @@ npx -v, npm -v, node-v 등의 명령어를 사용해
 
 ![image](https://github.com/user-attachments/assets/aab60ae2-9e25-4b3b-ac13-ffb430c0516d)   
 
-npx create-react-app "프로젝트명" 명령어를 사용해 사용할 Working Directory 폴더를 생성할 수 있다     
+npx create-react-app "프로젝트명" 명령어를 사용해 사용할 Working Directory 폴더를 생성할 수 있다.     
 
 
 
