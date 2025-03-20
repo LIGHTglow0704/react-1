@@ -14,7 +14,7 @@
 git init 명령어를 이용해 .git 폴더를 생성할 수 있다.   
 만약 지우고 싶을때는 rm - rf .git 명령어를 이용해 지울 수 있다.   
 
-![image](https://github.com/user-attachments/assets/bbf0942e-b4b7-4365-b6a2-e0e8f0caa701)
+![image](https://github.com/user-attachments/assets/bbf0942e-b4b7-4365-b6a2-e0e8f0caa701)   
 git config user.name "사용할 이름"   
 git config user.email "사용할 이메일"   
 명령어를 이용해 초기 유저 설정을 할 수 있다.   
