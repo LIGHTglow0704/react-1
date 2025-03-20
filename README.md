@@ -14,6 +14,19 @@
 git init 명령어를 이용해 .git 폴더를 생성할 수 있다.   
 만약 지우고 싶을때는 rm - rf .git 명령어를 이용해 지울 수 있다.   
 
+![image](https://github.com/user-attachments/assets/bbf0942e-b4b7-4365-b6a2-e0e8f0caa701)
+git config user.name "사용할 이름"   
+git config user.email "사용할 이메일"   
+명령어를 이용해 초기 유저 설정을 할 수 있다.   
+
+자신이 설정한 이름과 이메일을 보고 싶다면
+git config user.name
+git config user.email
+git config list 
+명령어를 이용해 확인할 수 있다.   
+
+   git config list 명령어에서 빠져나오고 싶다면 Q 를 누르면 된다
+
 ![image](https://github.com/user-attachments/assets/d7faa38d-82dc-4860-b36c-36ab318f1bec)   
 npx -v, npm -v, node-v 등의 명령어를 사용해   
 현재 node.js의 버전을 확인 할 수 있다.      
