@@ -32,7 +32,7 @@ npx create-react-app "프로젝트명" 명령어를 사용해 사용할 Working 
 ![image](https://github.com/user-attachments/assets/0608918a-c92f-4b2c-a4eb-13139fdcddea)   
 
 Happy Haking!이 뜬다면 정상적으로 폴더를 생성한 것을 확인할 수 있다.   
-
+   
 
 ![image](https://github.com/user-attachments/assets/628fdd36-f97b-431b-9c11-ad5aa1b9b830)   
 npm start 명령어를 사용하면 서버를 실행시켜 위와 같이 브라우저에 프로젝트를 띄울 수 있다.   
