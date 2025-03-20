@@ -53,6 +53,6 @@ git remote add "사용하고 싶은 별칭" "push할 깃헙 주소"
 변경한 주소를 확인하고 싶다면   
 git remote -v를 통해 확인할 수 있다   
 
-git 
+git push -u "자신이 설정한 별칭" "
 
 
