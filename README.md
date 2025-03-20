@@ -11,9 +11,8 @@
 
 
 > ![image](https://github.com/user-attachments/assets/d326a9e3-d094-4aeb-b9c8-ab52dec4706c)   
-
->           >             >git init 명령어를 이용해 .git 폴더를 생성할 수 있다.
->           >             > 만약 지우고 싶을때는 rm - rf .git 명령어를 이용해 지울 수 있다.   
+>           >it init 명령어를 이용해 .git 폴더를 생성할 수 있다.
+>           >만약 지우고 싶을때는 rm - rf .git 명령어를 이용해 지울 수 있다.   
 
 
 
