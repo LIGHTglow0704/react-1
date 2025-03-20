@@ -19,7 +19,7 @@ git config user.name "사용할 이름"
 git config user.email "사용할 이메일"   
 명령어를 이용해 초기 유저 설정을 할 수 있다.   
 
-자신이 설정한 이름과 이메일을 보고 싶다면
+자신이 설정한 이름과 이메일을 보고 싶다면   
 git config user.name   
 git config user.email   
 git config list    
