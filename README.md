@@ -15,9 +15,9 @@
  만약 지우고 싶을때는 rm - rf .git 명령어를 이용해 지울 수 있다.   
 
 
->![image](https://github.com/user-attachments/assets/d7faa38d-82dc-4860-b36c-36ab318f1bec)   
->>npx -v, npm -v, node-v 등의 명령어를 사용해
->>현재 node.js의 버전을 확인 할 수 있다.   
+![image](https://github.com/user-attachments/assets/d7faa38d-82dc-4860-b36c-36ab318f1bec)   
+npx -v, npm -v, node-v 등의 명령어를 사용해
+현재 node.js의 버전을 확인 할 수 있다.   
 
 
 ![image](https://github.com/user-attachments/assets/aab60ae2-9e25-4b3b-ac13-ffb430c0516d)   
