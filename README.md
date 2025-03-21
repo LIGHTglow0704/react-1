@@ -58,6 +58,14 @@ git에 포함하고 싶지않은 파일의 이름 혹은 폴더를 입력하는 
 #### npm install
 파일과 캐시 정리가 끝났다면 패키지를 다시 설치한다.
 
+## React component
+![image](https://github.com/user-attachments/assets/cb7ede1c-33e2-4d80-989e-8fce3417844b)   
+위 화면은 https://ko.react.dev/ 사이트의 리액트 예제코드이다.   
+React component는 데이터를 수신하고 화면에 표시해야 하는 내용을 반환한다.
+사용자의 입력을 통해 새로운 데이터를 componect에 전달 할 수도 있다.
+
+오늘은 이와같이 React를 써야하는 이유와 구조와 역할에 대해 배웠다.
+
 ---
 # 3월 13일 (2주차)
 
