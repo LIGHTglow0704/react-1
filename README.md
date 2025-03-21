@@ -42,6 +42,12 @@ git에 포함하고 싶지않은 파일의 이름 혹은 폴더를 입력하는 
 ##### optionalDependencies
 선택적 의존성 라이브러리
 
+## package.json과 package-lock.json의 차이
+#### package.json
+패키지 설치, 배포, 의존성 등에 대한 정보를 가지고 있는 파일
+#### package-lock.json
+패키지의 정확한 버전과 의존성 트리를 정확하게 기록한 파일
+
 
 ---
 # 3월 13일 (2주차)
