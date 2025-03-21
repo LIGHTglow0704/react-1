@@ -4,26 +4,27 @@
 
 ## 리액트의 구조와 역할
 
-node_modules/   
+##### node_modules/   
 새로 설치하는 패키지가 저장되는 폴더로 많은 양의 파일이 존재한다.   
 git으로 관리하지 않기 때문에 폴더 이름이 흐릿하게 나와있다.   
 
-public/   
+##### public/   
 배포할 html, css, JavaScript가 보관되는 폴더이다.   
 
-src/
+##### src/
 React 프로젝트 내부에서 작성하는 거의 모든 파일들이 이 폴더 있으며   
 파일들은 명령어에 따라 JS로 컴파일이 진행된다.   
 
-.gitignore   
+##### .gitignore   
 git에 포함하고 싶지않은 파일의 이름 혹은 폴더를 입력하는 파일이다.   
 
-package.json
+##### package.json
 프로젝트의 의존성 목록과 실행 스크립트가 포함된 파일로   
 라이브러리들의 목록이 포함되어 있다.   
 
-README.md   
+##### README.md   
 프로젝트를 설명하는 문서이다.   
+
 
 
 ---
