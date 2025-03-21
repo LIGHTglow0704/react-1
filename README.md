@@ -48,6 +48,15 @@ git에 포함하고 싶지않은 파일의 이름 혹은 폴더를 입력하는 
 #### package-lock.json
 패키지의 정확한 버전과 의존성 트리를 정확하게 기록한 파일
 
+## node module 재설치 하는법
+#### rm -rf node-modules package-lock   
+명령어로 node modules 폴더와 package-lock.json 파일을 삭제할 수 있다.   
+
+#### npm cache clean --force
+명령어로 cache를 초기화 할 수 있다.
+
+#### npm install
+파일과 캐시 정리가 끝났다면 패키지를 다시 설치한다.
 
 ---
 # 3월 13일 (2주차)
