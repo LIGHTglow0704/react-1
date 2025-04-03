@@ -8,9 +8,17 @@
 }
 
 .wrapper {
-  display:grid;
-  place-items: center;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
 }
+
+.wrapper > div {
+  width: 50%;
+  float: left;
+}
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

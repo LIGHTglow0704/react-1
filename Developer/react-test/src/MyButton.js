@@ -1,5 +1,11 @@
 export default function MyButton() {
+  function handleClick() {
+    alert('Hello world');
+  }
+
   return (
-    <button>I'm MyButton</button>
+    <button onClick={handleClick}>
+      I'm MyButton
+      </button>
   );
 }
