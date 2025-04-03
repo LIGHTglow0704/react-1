@@ -50,12 +50,10 @@ export default function App() {
 
       <div>
         <h1>Updating the screen</h1>
-      <Count />
-      <Count />
-      <Count />
-      
+        <Count />
+        <Count />
+        <Count />
 
-      
         <p>Sharing data between components</p>
         <CountState2 count={count} onClick={handleClick} />
         <CountState2 count={count} onClick={handleClick} />

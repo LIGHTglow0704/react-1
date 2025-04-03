@@ -1,12 +1,45 @@
 # 이정윤 202130423
 ---
+# 4월 3일 (5주차)
+
+## Component 간 데이터 공유
+https://ko.react.dev/learn   
+참고 사이트   
+
+### 예제 1
+
+![image](https://github.com/user-attachments/assets/e0aa186c-7d9f-4d57-a614-f2536979c857)   
+![image](https://github.com/user-attachments/assets/5e608c3c-46a3-459a-a6b3-e4ce11f77adf)   
+
+onClick 함수를 사용하면 버튼을 눌렀을때 화면에 원하는 텍스트를 띄울 수 있다.   
+
+### 예제 2
+![image](https://github.com/user-attachments/assets/9a360ca5-952c-4f94-8389-9535823eb6a8)   
+![image](https://github.com/user-attachments/assets/efb41dc6-e57c-48da-847d-55813d7b93b9)   
+
+count 클릭 버튼 js를 만든 뒤 <count />를 여러번 넣으면 각각 객체를 따로 적용하여 화면에 띄울 수 있다.   
+이 각각의 Component는 완전 개별의 함수로 작동하며 서로 데이터를 공유하지 않는다.   
+
+### 예제3
+![image](https://github.com/user-attachments/assets/9aecf2c9-290b-4d7f-bee8-3d9d81c85f30)   
+![image](https://github.com/user-attachments/assets/b37ed913-bb5f-401c-aec3-b9ad2ce12d20)   
+
+이렇게 state를 개별 버튼에서 모든 버튼이 포함된 가장 가까운 컴포넌트 "위쪽"으로 이동시킨 뒤   
+props로 전달한다면 아까와 다르게 두 컴포넌트간의 데이터 공유가 가능해진다.
+
+### 예제4
+
+
+
+
+---
 # 3월 27일 (4주차)
 
 ## Component의 생성 및 nesting(중첩)
 https://ko.react.dev/learn   
 참고 사이트   
 
-#### 예제 1
+### 예제 1
 
 ![image](https://github.com/user-attachments/assets/59e3e0fd-2b35-4914-a9e0-a856fabeec4c)   
 
@@ -18,7 +51,7 @@ Working Directory 폴더를 생성해준다.
 그 후 App.js 파일에 간단한 코드를 작성한 후   
 npm start 명령어를 사용하여 웹페이지를 띄워 잘 작동하는지 확인해주었다.   
 
-#### 예제 2
+### 예제 2
 
 ![image](https://github.com/user-attachments/assets/1c001118-63ae-4a0f-bef5-77c02dc99a3f)   
 ![image](https://github.com/user-attachments/assets/52e249ea-21ee-41d1-a5e4-589ece5a4d1b)   
@@ -28,7 +61,7 @@ touch src/MyButton.js 명령어를 이용해 MyButton.js 파일을 생성한 뒤
 MyButton 코드를 옮겨 export default를 이용하여 import로 가져와 실행하였다.   
 MyButton import 이름은 짧게 MyB로 바꿔줬다.   
 
-#### 예제 3
+### 예제 3
 ![image](https://github.com/user-attachments/assets/76cc89d2-dedb-4302-9517-9d7554d76072)   
 ![image](https://github.com/user-attachments/assets/693c1308-07cf-4ce6-9088-4ece14c20c11)   
 
@@ -36,7 +69,7 @@ MyButton import 이름은 짧게 MyB로 바꿔줬다.
 touch src/ButtonLib.js 명령어를 이용해 ButtonLib.js 파일을 생성한 뒤   
 버튼 3개를 만들어 넣어줬다.   
 
-#### 예제 4
+### 예제 4
 ![image](https://github.com/user-attachments/assets/73be6504-616c-419b-98ad-09c4dd8419a3)   
 ![image](https://github.com/user-attachments/assets/3c414022-7a05-4699-a38f-9c20209a5cdc)   
 
@@ -44,7 +77,7 @@ touch src/ButtonLib.js 명령어를 이용해 ButtonLib.js 파일을 생성한 �
 touch src/AboutPage.js 명령어를 이용해 AboutPage.js 파일을 생성한 뒤   
 h1과 p 태그로 제목과 설명을 만들었다.
 
-#### 예제 5
+### 예제 5
 ![image](https://github.com/user-attachments/assets/1826c116-05e5-46da-a8a1-77bc50a8f990)   
 ![image](https://github.com/user-attachments/assets/71670718-3505-40ad-be80-a87b8d871958)   
 ![image](https://github.com/user-attachments/assets/e5023407-1656-47e1-b1e6-8dcb51abd1d2)   
