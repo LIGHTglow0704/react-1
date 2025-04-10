@@ -1,10 +1,11 @@
-import logo from './logo.svg';
+import Board from './Board';
 import './App.css';
 
 function App() {
   return (
     <div>
-    <button>X</button>
+    <h1>Tic Tac Toe</h1>
+    <Board />
     </div>
   );
 }
