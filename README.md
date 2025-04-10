@@ -1,5 +1,53 @@
 # 이정윤 202130423
 ---
+# 4월 10일 (6주차)
+
+## Props를 통해 데이터 전달하기
+https://ko.react.dev/learn/tutorial-tic-tac-toe    
+참고 사이트   
+
+### 예제 1
+
+![image](https://github.com/user-attachments/assets/09b10b08-61b1-413e-ada1-6e8c4ca2f4d3)
+
+Square 컴포넌트를 Board에서 전달할 prop value를 읽도록 만들어주면   
+지저분하고 중복된 코드를 피할 수 있다.
+
+### 예제 2
+
+![image](https://github.com/user-attachments/assets/fd52ac61-5921-46b8-bc91-0610facf3876)   
+
+handleClick 함수와 onClick 함수를 추가하여 틱택토 화면을 클릭하면   
+콘솔에 clicked! 로그가 뜨도록 코딩해주었다.
+
+### 예제 3
+
+![image](https://github.com/user-attachments/assets/f14376b1-71a2-4c19-aca7-c0d9da65ecb7)   
+
+
+useState 함수를 이용해서 Square의 값을 저장하고 클릭되면 "X가 출력되게 만들어줬다.
+그렇기 때문에 Props은 더 이상 Square에서 사용하지 않으므로 value 값은 삭제해주었다.
+
+## state 끌어올리기 
+
+### 예제 4
+
+![image](https://github.com/user-attachments/assets/f82b1170-b28f-4867-842a-e5390ac92151)   
+![image](https://github.com/user-attachments/assets/c3aafe28-db81-4451-9889-34ddb1a39d05)   
+![image](https://github.com/user-attachments/assets/99c35674-f892-43b1-a990-7f456bd63ee5)   
+
+
+App.js, Board.js, Square.js를 각각 생성해 컴포넌트를 옮겨준 뒤,   
+Board 컴포넌트에서 각 value prop를 받을 수 있도록 Square 컴포넌트를 수정한 뒤,   
+handleClick 함수를 정의하여 보드의 state를 담고 있는 squares 배열을 업데이트해주었다.
+그리고 handleClick 함수에 인덱스를 나타내는 인수 i를 추가한 뒤 
+() => 문법을 사용해서 handleClick(0)을 각각 출력해 주었다.
+
+
+
+
+
+---
 # 4월 3일 (5주차)
 
 ## Component 간 데이터 공유
@@ -27,10 +75,7 @@ count 클릭 버튼 js를 만든 뒤 <count />를 여러번 넣으면 각각 객
 이렇게 state를 개별 버튼에서 모든 버튼이 포함된 가장 가까운 컴포넌트 "위쪽"으로 이동시킨 뒤   
 props로 전달한다면 아까와 다르게 두 컴포넌트간의 데이터 공유가 가능해진다.
 
-### 예제4
-
-
-
+오늘은 이와같이 Component간의 데이터 공유를 하는 법과 개별로 적용하는 법에 대해 배웠다.
 
 ---
 # 3월 27일 (4주차)
@@ -242,4 +287,5 @@ npm의 보안 문제는 당분간 자주 발생할 것으로 보인다.
 오늘은 이와같이 node.js와 깃헙을 사용하는 방법에 대해 배웠다.   
 
 ---
+
 
