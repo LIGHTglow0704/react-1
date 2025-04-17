@@ -125,12 +125,26 @@ handleClick 함수를 정의하여 보드의 state를 담고 있는 squares 배�
 https://ko.react.dev/learn   
 참고 사이트   
 
-### 예제 1
+### onClick 함수와 alert
 
-![image](https://github.com/user-attachments/assets/e0aa186c-7d9f-4d57-a614-f2536979c857)   
-![image](https://github.com/user-attachments/assets/5e608c3c-46a3-459a-a6b3-e4ce11f77adf)   
+```js
+export default function MyButton() {
+  function handleClick() {
+    alert('Hello world');
+  }
 
-onClick 함수를 사용하면 버튼을 눌렀을때 화면에 원하는 텍스트를 띄울 수 있다.   
+  return (
+    <button onClick={handleClick}>
+      I'm MyButton
+      </button>
+  );
+}
+```
+onClick 함수는 클릭했을때 이벤트를 일으킬 수 있는 함수이다.   
+위 코드를 보면 버튼에 onClick 함수를 이용하여 버튼을 클릭했을때,   
+이벤트를 발생하게 하였고 함수 이름을 handleClick 정의해 그 함수 안에 alert라는   
+js에서 알림창을 띄울 수 있게 해주는 코드를 이용하여 버튼을 클릭하면 Hello world라는   
+알림창이 나오게 할 수 있다.
 
 ### 예제 2
 ![image](https://github.com/user-attachments/assets/9a360ca5-952c-4f94-8389-9535823eb6a8)   
