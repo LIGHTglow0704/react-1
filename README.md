@@ -43,8 +43,49 @@
 트리의 영향을 받지 않는 부분의 리렌더링은 피하는것이 좋기 때문에 불변성을 사용하면
 데이터 변경 여부를 저렴한 비용으로 판단할 수 있다.
 
+## 순서 정하기
+```js
+export default function Board() {
+  const [xIsNext, setXIsNext] = useState(true);
+  const [squares, setSquares] = useState(Array(9).fill(null));
 
+  function handleClick(i) {
+    if (squares[i]) {
+      return;
+    }
+    const nextSquares = squares.slice();
+    if (xIsNext) {
+      nextSquares[i] = "X";
+    } else {
+      nextSquares[i] = "O";
+    }
+    setSquares(nextSquares);
+    setXIsNext(!xIsNext);
+  }
 
+```
+틱택토를 클릭할때마다 다음 플레이어를 결정하기 위해서 xIsNext가 반전되어 state에 저장된다.   
+이때, handleClick 함수를 업데이트해서 xIsNext의 값을 반전시키기 위해
+```js
+if (xIsNext) {
+      nextSquares[i] = "X";
+    } else {
+      nextSquares[i] = "O";
+    }
+    setXIsNext(!xIsNext);
+}
+```
+위와 같이 if문을 사용해서 각각 플레이어에 따라 X와 O를 번갈아 출력하도록 할 수 있다.
+하지만 이와 같은 경우 X가 O를 O가 X를 덮어씌우는 문제가 발생해버린다.   
+그렇기에 
+```js
+  if (squares[i]) {
+    return;
+  }
+```
+이미 채워져 있는 보드를 업데이트 하기전에 handleClick 함수에   
+미리 return을 해준다면 덮어씌우는 문제가 사라지고   
+X 또는 O만 추가할 수 있다.   
 
 ---
 # 4월 10일 (6주차)
