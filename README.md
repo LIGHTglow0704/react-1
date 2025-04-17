@@ -128,16 +128,24 @@ status를 div로 넣어주었다.
 
 ## state 한번 더 끌어올리기
 ```js
-
+export default function Game() {
+  return (
+    <div className="game">
+      <div className="game-board">
+        <Board />
+      </div>
+      <div className="game-info">
+        <ol>{/*TODO*/}</ol>
+      </div>
+    </div>
+  );
+}
 ```
+Board 컴포넌트의 이름을 Game 컴포넌트로 바꾼 뒤,   
+Game 컴포넌트를 최상위 컴포넌트로 사용하도록 바꾸어주었다.   
 
 
-## 시간여행 추가하기
-squares 배열을 직접 업데이트한다면 구현하기 매우 어렵기 때문에 slice()를 사용해,   
-플레이어가 클릭할 때마다 squares 배열의 새 복사본을 만들어 불변으로 처리시켰다.   
-이로인해 squares 배열에 모든 과거 버전을 저장할 수 있게 되었다.   
-
-
+오늘은 이렇게 틱택토 프로그램의 순서를 정하고 승자를 결정하는 코드를 완성했다.   
 
 ---
 # 4월 10일 (6주차)
