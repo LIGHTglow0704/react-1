@@ -226,7 +226,19 @@ React component는 데이터를 수신하고 화면에 표시해야 하는 내�
 git init 명령어를 이용해 .git 폴더를 생성할 수 있다.   
 만약 지우고 싶을때는 rm - rf .git 명령어를 이용해 지울 수 있다.   
 
-![image](https://github.com/user-attachments/assets/bbf0942e-b4b7-4365-b6a2-e0e8f0caa701)   
+```
+git config user.name lightglow
+```
+```
+git config user.email sk40408981@gmail.com
+```
+```
+git config user name
+```
+```
+git config user.email
+``` 
+
 
 git config user.name "사용할 이름"   
 git config user.email "사용할 이메일"   
