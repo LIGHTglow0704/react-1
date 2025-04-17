@@ -258,7 +258,8 @@ Happy Haking!이 뜬다면 정상적으로 폴더를 생성한 것을 확인할 
 npm start 명령어를 사용하면 서버를 실행시켜 위와 같이 브라우저에 프로젝트를 띄울 수 있다.   
 만약 서버를 중지 시키고 싶다면 ctrl + c를 이용해 중지시킬 수 있다.
 
-![image](https://github.com/user-attachments/assets/2de289b3-ac7e-40f7-9cef-2f6083c8b2a7)   
+git remote add light https://github.com/react-1
+git remote -v
 
 git remote add "사용하고 싶은 별칭" "push할 깃헙 주소"   
 명령어를 이용해 push할 깃헙 주소를 변경할 수 있다.   
