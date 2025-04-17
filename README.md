@@ -3,10 +3,10 @@
 # 4월 17일 (7주차)
 
 ```bash
-rm -rf.git
+git remote -v
 ```
 ```
-rm -rf.git
+git remote -v
 ``` 
 
 ## 
