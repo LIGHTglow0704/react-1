@@ -196,12 +196,47 @@ MyButton 코드를 옮겨 export default를 이용하여 import로 가져왔다.
 항상 div태그안에 다른 태그들을 다 넣어서 사용하던가, 하나의 태그를 사용하여야한다.
 
 ### 예제 3
-![image](https://github.com/user-attachments/assets/76cc89d2-dedb-4302-9517-9d7554d76072)   
-![image](https://github.com/user-attachments/assets/693c1308-07cf-4ce6-9088-4ece14c20c11)   
+```js
+import MyB from "./MyButton"
+import { Button1, Button2, Button3 } from "./ButtonLib"
+export default function App() {
+  return (
+  <div>
+  <h1>Hello, React!</h1>
+  <MyB />
+  <Button1 /><br />
+  <Button2 />&nbsp;
+  <Button3 />
+  </div>
+
+  )
+}
+```
+```js
+function Button1() {
+  return (
+    <button>Button1</button>
+  );
+}
+
+function Button2() {
+  return (
+    <button>Button2</button>
+  );
+}
+
+function Button3() {
+  return (
+    <button>Button3</button>
+  );
+}
+
+export { Button1, Button2, Button3 }
+```
 
 
-touch src/ButtonLib.js 명령어를 이용해 ButtonLib.js 파일을 생성한 뒤   
-버튼 3개를 만들어 넣어줬다.   
+ButtonLib.js 파일을 생성한 뒤 import를 통해 파일을 불러와 준다.   
+그 후 각각 Button1, Button2, Button3 함수를 만들어 버튼 3개를 만들어 화면에 출력할 수 있다.
 
 ### 예제 4
 ![image](https://github.com/user-attachments/assets/73be6504-616c-419b-98ad-09c4dd8419a3)   
