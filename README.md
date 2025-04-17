@@ -127,6 +127,9 @@ Board 컴포넌트에 status 구역을 추가해서 이겼다면 Winner: O 또�
 status를 div로 넣어주었다.
 
 ## state 한번 더 끌어올리기
+```js
+
+```
 
 
 ## 시간여행 추가하기
