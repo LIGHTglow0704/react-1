@@ -69,6 +69,39 @@ if (xIsNext) {
 X 또는 O만 추가할 수 있다.   
 
 ## 승자 결정하기
+```js
+function handleClick(i) {
+  if (squares[i] || calculateWinner(squares)) {
+    return;
+  }
+
+function calculateWinner(squares) {
+  const lines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+  ];
+  for (let i = 0; i < lines.length; i++) {
+    const [a, b, c] = lines[i];
+    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      return squares[a];
+    }
+  }
+  return null;
+}
+```
+게임의 승자를 결정하기 위해서 9개의 사각형 배열을 가져와서 승자를 확인하고   
+적절하게 X , O, 또는 null을 반환하는 도우미 함수 calculateWinner 만들었다.   
+Board 컴포넌트의 handleClick 함수에서 calculateWinner를 호출하여 플레이어가   
+Winner인지 아닌지 확인한다. 또한 사용자가 X, 0 사각형을 클릭했는지 확인하기 위해,    
+함수를 모두 return 하여 조기 반환하도록 추가하였다.   
+
+
 
 ---
 # 4월 10일 (6주차)
@@ -77,21 +110,21 @@ X 또는 O만 추가할 수 있다.
 https://ko.react.dev/learn/tutorial-tic-tac-toe    
 참고 사이트   
 
-### 예제 1
+## 예제 1
 
 ![image](https://github.com/user-attachments/assets/09b10b08-61b1-413e-ada1-6e8c4ca2f4d3)
 
 Square 컴포넌트를 Board에서 전달할 prop value를 읽도록 만들어주면   
 지저분하고 중복된 코드를 피할 수 있다.
 
-### 예제 2
+## 예제 2
 
 ![image](https://github.com/user-attachments/assets/fd52ac61-5921-46b8-bc91-0610facf3876)   
 
 handleClick 함수와 onClick 함수를 추가하여 틱택토 화면을 클릭하면   
 콘솔에 clicked! 로그가 뜨도록 코딩해주었다.
 
-### 예제 3
+## 예제 3
 
 ![image](https://github.com/user-attachments/assets/f14376b1-71a2-4c19-aca7-c0d9da65ecb7)   
 
@@ -101,7 +134,7 @@ useState 함수를 이용해서 Square의 값을 저장하고 클릭되면 "X가
 
 ## state 끌어올리기 
 
-### 예제 4
+## 예제 4
 
 ![image](https://github.com/user-attachments/assets/f82b1170-b28f-4867-842a-e5390ac92151)   
 ![image](https://github.com/user-attachments/assets/c3aafe28-db81-4451-9889-34ddb1a39d05)   
@@ -125,7 +158,7 @@ handleClick 함수를 정의하여 보드의 state를 담고 있는 squares 배�
 https://ko.react.dev/learn   
 참고 사이트   
 
-### onClick 함수와 alert
+## onClick 함수와 alert
 
 ```js
 export default function MyButton() {
@@ -146,14 +179,52 @@ onClick 함수는 클릭했을때 이벤트를 일으킬 수 있는 함수이다
 js에서 알림창을 띄울 수 있게 해주는 코드를 이용하여 버튼을 클릭하면 Hello world라는   
 알림창이 나오게 할 수 있다.
 
-### 예제 2
-![image](https://github.com/user-attachments/assets/9a360ca5-952c-4f94-8389-9535823eb6a8)   
-![image](https://github.com/user-attachments/assets/efb41dc6-e57c-48da-847d-55813d7b93b9)   
+## useState와 Component 각각 적용하기
+```js
+import { useState } from 'react';
 
-count 클릭 버튼 js를 만든 뒤 <count />를 여러번 넣으면 각각 객체를 따로 적용하여 화면에 띄울 수 있다.   
+export default function CountState() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  return (
+    <div>
+      <button onClick={handleClick}>
+        Clicked {count} times
+      </button>
+    </div> 
+  );
+}
+```
+useState는 컴포넌트에 state 변수를 추가할 수 있는 React Hook이다.   
+[count, setCount]와 같이  state 변수의 이름을 지정하는 것이 규칙이며,    
+첫번째는 state 변수의 현재 state로, 처음에 제공한 초기 state로 설정된다.   
+두 번째는 상호작용에 반응하여 다른 값으로 변경할 수 있는 set 함수이다.   
+useState를 사용해 count 변수를 만들어주었고, 클릭할때마다 카운트 +1 이 되도록   
+코드를 만들었다.   
+
+
+count를 클릭할때마다 
+```js
+import Count from './CountState'
+export default function App() {
+  }
+
+  return (
+      <div>
+        <h1>Updating the screen</h1>
+        <Count />
+        <Count />
+        <Count />
+      </div>
+```
+<count />를 여러번 넣으면 각각 객체를 따로 적용하여 화면에 띄울 수 있다.   
 이 각각의 Component는 완전 개별의 함수로 작동하며 서로 데이터를 공유하지 않는다.   
 
-### 예제3
+## 완성된 코드
 ![image](https://github.com/user-attachments/assets/9aecf2c9-290b-4d7f-bee8-3d9d81c85f30)   
 ![image](https://github.com/user-attachments/assets/b37ed913-bb5f-401c-aec3-b9ad2ce12d20)   
 
