@@ -126,6 +126,9 @@ Board 컴포넌트에 status 구역을 추가해서 이겼다면 Winner: O 또�
 또 누가 차례였는지 헷갈릴 수 있기에 똑같이 Next Player : O 또는 Player : X를 표시하도록   
 status를 div로 넣어주었다.
 
+## state 한번 더 끌어올리기
+
+
 ## 시간여행 추가하기
 squares 배열을 직접 업데이트한다면 구현하기 매우 어렵기 때문에 slice()를 사용해,   
 플레이어가 클릭할 때마다 squares 배열의 새 복사본을 만들어 불변으로 처리시켰다.   
@@ -255,11 +258,89 @@ export default function App() {
 이 각각의 Component는 완전 개별의 함수로 작동하며 서로 데이터를 공유하지 않는다.   
 
 ## 완성된 코드
-![image](https://github.com/user-attachments/assets/9aecf2c9-290b-4d7f-bee8-3d9d81c85f30)   
-![image](https://github.com/user-attachments/assets/b37ed913-bb5f-401c-aec3-b9ad2ce12d20)   
+```js
+import { useState } from 'react';
+
+import MyB from "./MyButton"
+import { Button1, Button2, Button3 } from "./ButtonLib"
+import AP from "./AboutPage"
+import Profile from "./profile"
+import Splist from './Shoppinglist'
+import Count from './CountState'
+
+import './App.css'
+
+
+function CountState2({count, onClick}) {
+  return (
+    <div>
+      <button onClick={onClick}>
+        Clicked {count} times
+      </button>
+    </div>
+    );
+  }
+
+
+
+
+export default function App() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  return (
+    <div className="wrapper">
+      <h1>Welcome to my app</h1>
+      <div>
+      <p>default export example</p>
+      <MyB />
+      <p>named export example</p>
+      <Button1 /><br />
+      <Button2 />&nbsp;
+      <Button3 />
+      <p>wrapping example</p>
+      <AP />
+      <p>Displaying data</p>
+      <Profile />
+      <p>Rendering lists</p>
+      <Splist />
+      </div>
+
+      <div>
+        <h1>Updating the screen</h1>
+        <Count />
+        <Count />
+        <Count />
+
+        <p>Sharing data between components</p>
+        <CountState2 count={count} onClick={handleClick} />
+        <CountState2 count={count} onClick={handleClick} />
+      </div>
+</div>
+    
+  ) 
+}
+```
 
 이렇게 state를 개별 버튼에서 모든 버튼이 포함된 가장 가까운 컴포넌트 "위쪽"으로 이동시킨 뒤   
 props로 전달한다면 아까와 다르게 두 컴포넌트간의 데이터 공유가 가능해진다.
+이때 props이란 부모 컴포넌트로부터 자식 컴포넌트로 전달할 수 있는 사용자 정의 속성이다.   
+컴포넌트 내부에서 관리되며 시간이 지남에 따라 변경될 수 있는 상태와 달리   
+props는 자식 컴포넌트의 관점에서 불변이다.
+
+## Props와 State 비교하기
+
+### Props
+props는 데이터와 이벤트 핸들러를 부모로부터 자식 컴포넌트로 전달하는 데 사용되며 단방향 데이터 흐름을 설정하며,   
+부모에 의해 설정되며 자식 컴포넌트에 의해 변경되지 않는다.
+
+### State
+State는 컴포넌트 내부의 것으로 동작과 렌더링을 제어한다.   
+props와 달리 상태는 가변적이며 보통 사용자의 행동이나 시스템 이벤트에 응답하여 시간이 지남에 따라 변할 수 있다.
+
 
 오늘은 이와같이 Component간의 데이터 공유를 하는 법과 개별로 적용하는 법에 대해 배웠다.
 
