@@ -2,12 +2,7 @@
 ---
 # 4월 17일 (7주차)
 
-```java
-git remote -v
-```
-```
-git remote -v
-``` 
+
 
 ## 
 
@@ -224,10 +219,10 @@ React component는 데이터를 수신하고 화면에 표시해야 하는 내�
 ## git의 기본적인 명령어들과 사용법   
 
 
-```
+```bash
 git init
 ```
-```
+```bash
 rm -rf.git
 ``` 
 
@@ -236,16 +231,16 @@ git init 명령어를 이용해 .git 폴더를 생성할 수 있다.
 
 
 
-```
+```bash
 git config user.name lightglow
 ```
-```
+```bash
 git config user.email sk40408981@gmail.com
 ```
-```
+```bash
 git config user name
 ```
-```
+```bash
 git config user.email
 ``` 
 
@@ -260,15 +255,15 @@ git config user.email
 git config list    
 명령어를 이용해 확인할 수 있다.   
 
-   git config list 명령어에서 빠져나오고 싶다면 Q 를 누르면 된다.
+git config list 명령어에서 빠져나오고 싶다면 Q 를 누르면 된다.
 
-```
+```bash
 npx -v
 ```
-```
+```bash
 npm -v
 ```
-```
+```bash
 node -v
 ``` 
 
@@ -277,7 +272,7 @@ npx -v, npm -v, node-v 등의 명령어를 사용해
 현재 node.js의 버전을 확인 할 수 있다.      
 
 
-```
+```bash
 npx create-react-app react-1
 ```
 
@@ -295,10 +290,10 @@ Happy Haking!이 뜬다면 정상적으로 폴더를 생성한 것을 확인할 
 npm start 명령어를 사용하면 서버를 실행시켜 위와 같이 브라우저에 프로젝트를 띄울 수 있다.   
 만약 서버를 중지 시키고 싶다면 ctrl + c를 이용해 중지시킬 수 있다.
 
-```
+```bash
 git remote add light https://github.com/react-1
 ```
-```
+```bash
 git remote -v
 ```
 
