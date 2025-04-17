@@ -240,7 +240,16 @@ git config list
 
    git config list 명령어에서 빠져나오고 싶다면 Q 를 누르면 된다.
 
-![image](https://github.com/user-attachments/assets/d7faa38d-82dc-4860-b36c-36ab318f1bec)   
+```
+npx -v
+```
+```
+npm -v
+```
+```
+node -v
+``` 
+
 
 npx -v, npm -v, node-v 등의 명령어를 사용해   
 현재 node.js의 버전을 확인 할 수 있다.      
