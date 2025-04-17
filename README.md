@@ -101,6 +101,36 @@ Board 컴포넌트의 handleClick 함수에서 calculateWinner를 호출하여 �
 Winner인지 아닌지 확인한다. 또한 사용자가 X, 0 사각형을 클릭했는지 확인하기 위해,    
 함수를 모두 return 하여 조기 반환하도록 추가하였다.   
 
+```js
+export default function Board() {
+  // ...
+  const winner = calculateWinner(squares);
+  let status;
+  if (winner) {
+    status = "Winner: " + winner;
+  } else {
+    status = "Next player: " + (xIsNext ? "X" : "O");
+  }
+
+ return (
+    <>
+      <div className="status">{status}</div>
+      <div className="board-row">
+        // ...
+  )
+}
+```
+승자를 결정하는 코드를 만들었다면 화면에 누가 이겼는지도 제대로 알려야한다.   
+Board 컴포넌트에 status 구역을 추가해서 이겼다면 Winner: O 또는 Winner: X를 표시하도록   
+코드를 추가한다.   
+또 누가 차례였는지 헷갈릴 수 있기에 똑같이 Next Player : O 또는 Player : X를 표시하도록   
+status를 div로 넣어주었다.
+
+## 시간여행 추가하기
+squares 배열을 직접 업데이트한다면 구현하기 매우 어렵기 때문에 slice()를 사용해,   
+플레이어가 클릭할 때마다 squares 배열의 새 복사본을 만들어 불변으로 처리시켰다.   
+이로인해 squares 배열에 모든 과거 버전을 저장할 수 있게 되었다.   
+
 
 
 ---
