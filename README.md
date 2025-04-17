@@ -223,13 +223,14 @@ React component는 데이터를 수신하고 화면에 표시해야 하는 내�
 
 ```
 git init
+```
+```
+rm -rf.git
 ``` 
 
 git init 명령어를 이용해 .git 폴더를 생성할 수 있다.   
 만약 지우고 싶을때는 rm - rf .git 명령어를 이용해 지울 수 있다.   
-```
-rm -rf.git
-``` 
+
 
 
 ```
