@@ -1,9 +1,27 @@
 # 이정윤 202130423
 ---
 # 4월 17일 (7주차)
+```javascript
+function App() {
+  return (
+    <div>
+    <h1>Tic Tac Toe</h1>
+    <Board />
+    </div>
+  );
+}
+```
 
-
-
+```js
+function App() {
+  return (
+    <div>
+    <h1>Tic Tac Toe</h1>
+    <Board />
+    </div>
+  );
+}
+```
 
 
 ## 
