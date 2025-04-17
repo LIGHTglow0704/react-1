@@ -185,6 +185,8 @@ export default function App() {
 
 그 후 App.js 파일에 Hello, React 라는 글자와 MyButton이라는 함수를 불러와   
 글자 밑에 I'm MyButton이라는 버튼이 보이도록 웹사이트를 만들어 주었다.   
+주의점이 있는데 return()안에 있는 코드들은 div태그 밖에 div태그를 따로 두지 못하기 때문에   
+항상 div태그안에 다른 태그들을 다 넣어서 사용하던가, 하나의 태그를 사용하여야한다.
 
 ### 예제 2
 
@@ -216,8 +218,6 @@ touch src/MyButton.js 명령어를 Git Bash에 입력해 MyButton.js 파일을 �
 MyButton 코드를 옮겨 export default를 이용하여 import로 가져왔다.   
 여기서 주의할 점은 MyButton import 이름은 항상 "대문자"로 시작하여야하며,   
 이름을 마음대로 지을 수 있지만 알기 쉽게 짓는것이 좋다.   
-또한 return()안에 있는 코드들은 div태그 밖에 div태그를 따로 두지 못하기 때문에   
-항상 div태그안에 다른 태그들을 다 넣어서 사용하던가, 하나의 태그를 사용하여야한다.
 
 ### 예제 3
 ```js
