@@ -2,7 +2,7 @@
 ---
 # 4월 17일 (7주차)
 
-https://ko.react.dev/learn/tutorial-tic-tac-toe
+https://ko.react.dev/learn/tutorial-tic-tac-toe   
 참고 사이트
 
 ## 화살표 함수
