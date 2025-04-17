@@ -2,9 +2,41 @@
 ---
 # 4월 17일 (7주차)
 
+## 화살표 함수
+```js
+  return(
+    <>
+    <div>
+      <div className="board-row">
+        
+      <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
+      <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
+      <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
+      </div>
+
+      <div className="board-row">
+      <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
+      <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
+      <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
+      </div>
+
+      <div className="board-row">
+      <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
+      <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
+      <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+      </div>
+    </div>
+    </>
+  )
+}
+```
+위 코드에서 () => handleClick(0) 라는 문법은 화살표 함수라는 문법으로,   
+=> 뒤의 코드가 실행되게 만들어 함수를 짧게 만들 수 있는 문법이다.   
+이렇게 화살표 문법을 사용하면 setSquares를 호출하여 보드 컴포넌트를 렌더링 할때,   
+handleClick(0)가 무한으로 실행되는 오류를 고칠 수 있다.
 
 
-## 
+
 
 ---
 # 4월 10일 (6주차)
