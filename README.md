@@ -294,7 +294,8 @@ npm start 명령어를 사용하면 서버를 실행시켜 위와 같이 브라�
 
 ```
 git remote add light https://github.com/react-1
-
+```
+``` 
 git remote -v
 ```
 
