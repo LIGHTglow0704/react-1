@@ -131,10 +131,27 @@ npx create-react-app react-test
 프로젝트를 시작하기 전에 위 명령어를 git bash에 입력해      
 Working Directory 폴더를 생성해준다.   
 
-![image](https://github.com/user-attachments/assets/6061b5ff-1c29-454e-9147-949113d69c90)   
+```js
+function MyButton() {
+  return (
+    <button>
+      I'm MyButton
+    </button>
+  )
+}
 
-그 후 App.js 파일에 간단한 코드를 작성한 후   
-npm start 명령어를 사용하여 웹페이지를 띄워 잘 작동하는지 확인해주었다.   
+export default function App() {
+  return (
+    <div>
+      <h1>Hello, React!</h1>
+      <MyButton />
+    </div>
+  )
+}  
+```
+
+그 후 App.js 파일에 Hello, React 라는 글자와 MyButton이라는 함수를 불러와   
+글자 밑에 I'm MyButton이라는 버튼이 보이도록 웹사이트를 만들어 주었다.   
 
 ### 예제 2
 
