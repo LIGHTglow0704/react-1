@@ -124,9 +124,11 @@ https://ko.react.dev/learn
 
 ### 예제 1
 
-![image](https://github.com/user-attachments/assets/59e3e0fd-2b35-4914-a9e0-a856fabeec4c)   
+```bash
+npx create-react-app react-test
+```
 
-먼저 npx create-react-app react-test 명령어를 이용해   
+프로젝트를 시작하기 전에 위 명령어를 git bash에 입력해      
 Working Directory 폴더를 생성해준다.   
 
 ![image](https://github.com/user-attachments/assets/6061b5ff-1c29-454e-9147-949113d69c90)   
