@@ -68,58 +68,7 @@ if (xIsNext) {
 미리 return을 해준다면 덮어씌우는 문제가 사라지고   
 X 또는 O만 추가할 수 있다.   
 
-## 완성된 코드
-```js
-import Square from './Square';
-import { useState } from 'react';
-import './App.css';
-
-export default function Board() {
-  const [xIsNext, setXIsNext] = useState(true);
-  const [squares, setSquares] = useState(Array(9).fill(null));
-
-  function handleClick(i) {
-    if (squares[i]) {
-      return;
-    }
-    const nextSquares = squares.slice();
-    if (xIsNext) {
-      nextSquares[i] = "X";
-    } else {
-      nextSquares[i] = "O";
-    }
-    setSquares(nextSquares);
-    setXIsNext(!xIsNext);
-  }
-
-  
-  
-  return(
-    <>
-    <div>
-      <div className="board-row">
-        
-      <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
-      <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
-      <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
-      </div>
-
-      <div className="board-row">
-      <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
-      <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
-      <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
-      </div>
-
-      <div className="board-row">
-      <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
-      <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
-      <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
-      </div>
-    </div>
-    </>
-  )
-}
-```
+## 승자 결정하기
 
 ---
 # 4월 10일 (6주차)
