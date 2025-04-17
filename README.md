@@ -155,7 +155,7 @@ props로 전달한다면 아까와 다르게 두 컴포넌트간의 데이터 �
 https://ko.react.dev/learn   
 참고 사이트   
 
-### 예제 1
+## Component 생성 및 js의 태그 사용법
 
 ```bash
 npx create-react-app react-test
@@ -188,7 +188,7 @@ export default function App() {
 주의점이 있는데 return()안에 있는 코드들은 div태그 밖에 div태그를 따로 두지 못하기 때문에   
 항상 div태그안에 다른 태그들을 다 넣어서 사용하던가, 하나의 태그를 사용하여야한다.
 
-### 예제 2
+## import와 정의 방법
 
 ```bash
 touch src/MyButton.js
@@ -219,7 +219,7 @@ MyButton 코드를 옮겨 export default를 이용하여 import로 가져왔다.
 여기서 주의할 점은 MyButton import 이름은 항상 "대문자"로 시작하여야하며,   
 이름을 마음대로 지을 수 있지만 알기 쉽게 짓는것이 좋다.   
 
-### 예제 3
+### import를 한번에 여러개 선언하기
 ```js
 import MyB from "./MyButton"
 import { Button1, Button2, Button3 } from "./ButtonLib"
@@ -260,29 +260,62 @@ export { Button1, Button2, Button3 }
 
 
 ButtonLib.js 파일을 생성한 뒤 import를 통해 파일을 불러와 준다.   
-그 후 각각 Button1, Button2, Button3 함수를 만들어 버튼 3개를 만들어 화면에 출력할 수 있다.
-
-### 예제 4
-![image](https://github.com/user-attachments/assets/73be6504-616c-419b-98ad-09c4dd8419a3)   
-![image](https://github.com/user-attachments/assets/3c414022-7a05-4699-a38f-9c20209a5cdc)   
+그 후 각각 Button1, Button2, Button3 함수를 만들어 버튼 3개를 만들어 화면에 출력할 수 있다.   
+아까 설명했듯이 import 이름을 정의할때는 항상 맨 앞의 이름은 대문자여야 한다.   
 
 
-touch src/AboutPage.js 명령어를 이용해 AboutPage.js 파일을 생성한 뒤   
-h1과 p 태그로 제목과 설명을 만들었다.
+### 완성된 코드
+```js
+import MyB from "./MyButton"
+import { Button1, Button2, Button3 } from "./ButtonLib"
+import AP from "./AboutPage"
+import Profile from "./profile"
+import './App.css'
 
-### 예제 5
-![image](https://github.com/user-attachments/assets/1826c116-05e5-46da-a8a1-77bc50a8f990)   
-![image](https://github.com/user-attachments/assets/71670718-3505-40ad-be80-a87b8d871958)   
-![image](https://github.com/user-attachments/assets/e5023407-1656-47e1-b1e6-8dcb51abd1d2)   
-![image](https://github.com/user-attachments/assets/f731eba3-2b46-4d54-b409-1f47d9e9eb56)   
+export default function App() {
+  return (
+    <div className="wrapper">
+      <h1>Hello, React!</h1>
+      <MyB />
+      <Button1 /><br />
+      <Button2 />&nbsp;
+      <Button3 />
+      <AP />
+      <Profile />
+      <Splist />
+      </div>
+  )
+}
+```
+```js
+import './profile.css'
+
+const user = {
+  name: 'Hedy Lamarr',
+  imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
+  imageSize: 90,
+};
+
+export default function Profile() {
+  return (
+    <>
+      <h1>{user.name}</h1>
+      <img
+        className="avatar"
+        src={user.imageUrl}
+        alt={'Photo of ' + user.name}
+        style={{
+          width: user.imageSize,
+          height: user.imageSize
+        }}
+      />
+    </>
+  );
+}
+
+```
 ![image](https://github.com/user-attachments/assets/64eb966f-a98a-4d66-8fd1-982bc51bbcf1)   
 
-touch src/profile.js 명령어를 이용해 profine.js 파일을 생성한 뒤   
-위 스프링 참조 사이트에서 코드를 가져와 이미지를 띄워주었다.   
-또한 네모난 이미지를 둥글게 만들어주기 위하여   
-touch src/profile.css 명령어를 이용해 profile.css 파일을 만들어 준 뒤      
-import 하여 적용해주고, div로 App.css 안에 그리드를 이용해 모든 내용을   
-센터로 옮겨주었다.   
 
 오늘은 이와같이 React 예제를 하나 둘 따라해 보며 리액트의 개념을 익혔다.
 
