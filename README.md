@@ -164,13 +164,36 @@ export default function App() {
 
 ### 예제 2
 
-![image](https://github.com/user-attachments/assets/1c001118-63ae-4a0f-bef5-77c02dc99a3f)   
-![image](https://github.com/user-attachments/assets/52e249ea-21ee-41d1-a5e4-589ece5a4d1b)   
-![image](https://github.com/user-attachments/assets/c61cacb8-59e1-462d-8e7d-be8ab62ce88d)   
+```bash
+touch src/MyButton.js
+```
+```js
+import MyB from "./MyButton"
 
-touch src/MyButton.js 명령어를 이용해 MyButton.js 파일을 생성한 뒤   
-MyButton 코드를 옮겨 export default를 이용하여 import로 가져와 실행하였다.   
-MyButton import 이름은 짧게 MyB로 바꿔줬다.   
+export default function App() {
+  return (
+    <div>
+      <h1>Hello, React!</h1>
+      <MyB />
+    </div>
+  );
+}
+```
+```js
+export default function MyButton() {
+return (
+    <button onClick={handleClick}>
+      I'm MyButton
+      </button>
+  );
+}
+```
+touch src/MyButton.js 명령어를 Git Bash에 입력해 MyButton.js 파일을 생성한 뒤   
+MyButton 코드를 옮겨 export default를 이용하여 import로 가져왔다.   
+여기서 주의할 점은 MyButton import 이름은 항상 "대문자"로 시작하여야하며,   
+이름을 마음대로 지을 수 있지만 알기 쉽게 짓는것이 좋다.   
+또한 return()안에 있는 코드들은 div 밖에 div를 따로 두지 못하기 때문에   
+항상 div로 한번에 묶어서 사용하던가, 하나의 태그를 사용하여야한다.
 
 ### 예제 3
 ![image](https://github.com/user-attachments/assets/76cc89d2-dedb-4302-9517-9d7554d76072)   
