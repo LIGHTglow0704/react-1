@@ -174,7 +174,7 @@ const moves = history.map((squares, move) => {
   );
 });
 ```
-이렇게 <li key={move}>로 key를 추가한 뒤 다시 로드하면 key 에러가 사라지게 된다.
+이렇게 ```js<li key={move}>```로 key를 추가한 뒤 다시 로드하면 key 에러가 사라지게 된다.
 
 
 
