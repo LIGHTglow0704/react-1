@@ -65,6 +65,31 @@ history 앞에 있는 ...은 history에 있는 모든 항목을 포함하는 새
 nextSquares 가 ["X",null,"O"]라면 새로운 [...history, nextSquares] 배열은   
 [[null,null,null], ["X",null,null], ["X",null,"O"]]이 되게 된다.    
 
+## 과거 움직임 보여주기 및 map 메서드
+```js
+  function jumpTo(nextMove) {
+    // TODO
+  }
+
+  const moves = history.map((squares, move) => {
+    let description;
+    if (move > 0) {
+      description = 'Go to move #' + move;
+    } else {
+      description = 'Go to game start';
+    }
+    return (
+      <li>
+        <button onClick={() => jumpTo(move)}>{description}</button>
+      </li>
+    );
+  });
+```
+React에서 여러 엘리먼트를 렌더링하려면 React 엘리먼트 배열을 사용할 수 있다.   
+이미 state에 이동 history 배열이 있기 때문에 이것을 React 엘리먼트 배열로 변환해야한다.   
+JS에서 한 배열을 다른 배열로 변환할려면 배열 map 메서드를 이용하면 된다.   
+
+
 ---
 # 4월 17일 (7주차)
 
