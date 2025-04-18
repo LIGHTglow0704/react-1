@@ -12,6 +12,7 @@ export default function Game() {
   const currentSquares = history[history.length - 1];
 ```
 현재 플레이에 대한 square를 렌더링하려면 history에서 마지막 squares의 배열을 읽어야한다.   
+또한 [Array(9).fill(null)]은 단일 항목배열이기에 9개의 null 배열이라는 뜻이다.   
 렌더링 중에 게산할 수 있는 충분한 정보가 이미 있기에 useState는 필요없다.   
  
 
