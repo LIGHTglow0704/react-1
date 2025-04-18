@@ -72,7 +72,15 @@ history 앞에 있는 ...은 history에 있는 모든 항목을 포함하는 새
 nextSquares 가 ["X",null,"O"]라면 새로운 [...history, nextSquares] 배열은   
 [[null,null,null], ["X",null,null], ["X",null,"O"]]이 되게 된다.    
 
-## 과거 움직임 보여주기 및 map 메서드
+
+## map 메서드
+map의 기본 구문은 map(callbackFn) or map(callbackFn, thisArg)이다.   
+thisArg는 내부에서 this로 사용할 값을 지정하는데 화살표 함수에서는 이것이 생략된다.   
+따라서 이 예제에서는 화살표 함수가 callback 함수를 대신한다.    
+squares, move는 화살표 함수의 매개변수이다.  
+
+
+## 과거 움직임 보여주기 및
 ```js
 [1, 2, 3].map((x) => x * 2) // [2, 4, 6]
 ```
@@ -102,8 +110,7 @@ map을 이용해 history를 화면의 버튼을 나타내는 React 엘리먼트�
 과거로 이동할 수 있도록 onClick 버튼을 만들어 옆에 띄워준다.   
 
 
-
-
+ 
 
 
 
