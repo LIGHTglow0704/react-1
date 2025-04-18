@@ -77,6 +77,7 @@ nextSquares 가 ["X",null,"O"]라면 새로운 [...history, nextSquares] 배열�
 ```js
 const moves = history.map((squares, move) => { }
 ```
+JS에서 한 배열을 다른 배열로 변환할려면 위와 같은 map 메서드를 이용하면 된다.  
 map의 기본 구문은 map(callbackFn) or map(callbackFn, thisArg)이다.   
 thisArg는 내부에서 this로 사용할 값을 지정하는데 화살표 함수에서는 이것이 생략된다.   
 따라서 이 예제에서는 화살표 함수가 callback 함수를 대신한다.    
@@ -89,11 +90,7 @@ squares, move는 화살표 함수의 매개변수이다.
 moves 객체에 저장하여 최종 출력에 사용한다.   
 
 
-## 과거 움직임 보여주기 및
-```js
-[1, 2, 3].map((x) => x * 2) // [2, 4, 6]
-```
-JS에서 한 배열을 다른 배열로 변환할려면 위와 같은 map 메서드를 이용하면 된다.   
+## 과거 움직임 보여주기 및 
 ```js
   function jumpTo(nextMove) {
     // TODO
