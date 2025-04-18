@@ -161,7 +161,6 @@ key는 전역적으로 고유할 필요는 없으며, 컴포넌트와 해당 컴
 일치하는 key를 탐색한 후, 이전에 존재하지 않았던 key가 있으면 컴포넌트를 생성한다.    
 만약 이전 리스트에 존재했던 key를 가지고 있지 않다면 그 컴포넌트를 제거하게 된다.   
 
-## 시간여행 구현하기
 틱택토 게임 기록에는 과거의 각 플레이에는 해당 플레이의 일련번호는 고유 ID 즉 인덱스가 있다.    
 중간에 순서를 바꾸거나 삭제하거나 삽입할 수 없기에 인덱스를 key로 사용하는것이 안전하다.
 ```js
@@ -176,6 +175,164 @@ const moves = history.map((squares, move) => {
 ```
 이렇게 ```<li key={move}>```로 key를 추가한 뒤 다시 로드하면 key 에러가 사라지게 된다.
 
+## 시간여행 구현하기
+```js
+const [currentMove, setCurrentMove] = useState(0);
+```
+사용자가 현재 어떤 단계를 보고 있는지 추적하기 위해 currenMove라는 새 변수를 만들었다.
+```js
+  function jumpTo(nextMove) {
+    setCurrentMove(nextMove);
+    setXIsNext(nextMove % 2 === 0);
+  }
+```
+다음으로 Game 내부의 jumpTo 함수에 currentMove를 업데이트 한 뒤   
+currentMove를 변경하는 숫자가 짝수면 xIsNext를 true로 설정했다.
+
+```js
+function handlePlay(nextSquares) {
+  const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
+  setHistory(nextHistory);
+  setCurrentMove(nextHistory.length - 1);
+  setXIsNext(!xIsNext);
+}
+```
+버튼을 눌렀을때 그 시점에서 새로운 이동을 하는 경우 해당 시점까지의 히스토리만   
+유지해야하기에 history의 모든 항목 전개구문 뒤에 nextSquares를 추가하고,
+history.slice(0, currentMove + 1)의 모든 항목 뒤에 추가하여 이전 히스토리의    
+해당 부분만 유지하도록 만들어주었다.   
+
+
+```js
+const currentSquares = history[currentMove];
+```
+마지막으로 마지막 동장을 렌더링하는 대신 현재 선택한 동작을 렌더링 하도록
+```history.length - 1``` 코드를 ```currenmove```로 변경한다.    
+그럼 이제 history의 특정 단계 버튼을 클릭하면 틱택토 보드가 즉시 업데이트 되어   
+과거의 보드 모양이 표시되게 된다.   
+
+
+## 완성된 틱택토 코드
+```js
+import { useState } from 'react';
+
+function Square({value, onSquareClick}) {
+  return (
+    <button className="square" onClick={onSquareClick}>
+      {value}
+    </button>
+  );
+}
+
+function Board({ xIsNext, squares, onPlay }) {
+  function handleClick(i) {
+    if (calculateWinner(squares) || squares[i]) {
+      return;
+    }
+    const nextSquares = squares.slice();
+    if (xIsNext) {
+      nextSquares[i] = 'X';
+    } else {
+      nextSquares[i] = 'O';
+    }
+    onPlay(nextSquares);
+  }
+
+  const winner = calculateWinner(squares);
+  let status;
+  if (winner) {
+    status = 'Winner: ' + winner;
+  } else {
+    status = 'Next player: ' + (xIsNext ? 'X' : 'O');
+  }
+
+  return (
+    <>
+      <div className="status">{status}</div>
+      <div className="board-row">
+        <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
+        <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
+        <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
+      </div>
+      <div className="board-row">
+        <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
+        <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
+        <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
+      </div>
+      <div className="board-row">
+        <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
+        <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
+        <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+      </div>
+    </>
+  );
+}
+
+export default function Game() {
+  const [xIsNext, setXIsNext] = useState(true);
+  const [history, setHistory] = useState([Array(9).fill(null)]);
+  const [currentMove, setCurrentMove] = useState(0);
+  const currentSquares = history[currentMove];
+
+  function handlePlay(nextSquares) {
+    const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
+    setHistory(nextHistory);
+    setCurrentMove(nextHistory.length - 1);
+    setXIsNext(!xIsNext);
+  }
+
+  function jumpTo(nextMove) {
+    setCurrentMove(nextMove);
+    setXIsNext(nextMove % 2 === 0);
+  }
+
+  const moves = history.map((squares, move) => {
+    let description;
+    if (move > 0) {
+      description = 'Go to move #' + move;
+    } else {
+      description = 'Go to game start';
+    }
+    return (
+      <li key={move}>
+        <button onClick={() => jumpTo(move)}>{description}</button>
+      </li>
+    );
+  });
+
+  return (
+    <div className="game">
+      <div className="game-board">
+        <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+      </div>
+      <div className="game-info">
+        <ol>{moves}</ol>
+      </div>
+    </div>
+  );
+}
+
+function calculateWinner(squares) {
+  const lines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+  for (let i = 0; i < lines.length; i++) {
+    const [a, b, c] = lines[i];
+    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      return squares[a];
+    }
+  }
+  return null;
+}
+
+```
 
 
 ---
