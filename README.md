@@ -33,10 +33,9 @@ handlePlay 함수는 더 이상 호출할 수 있는 setSquares 함수가 없기
 또한 squares 배열을 history 항목으로 추가해서 업데이트한 뒤 xIsNext 값을 반전시켰다.   
 
 ```js
-  function Board({ xIsNext, squares, onPlay }) {
+function Board({ xIsNext, squares, onPlay }) {
   function handleClick(i) {
-
-    if (squares[i] || calculateWinner(squares)) {
+    if (calculateWinner(squares) || squares[i]) {
       return;
     }
     const nextSquares = squares.slice();
@@ -51,8 +50,19 @@ handlePlay 함수는 더 이상 호출할 수 있는 setSquares 함수가 없기
 게임이 다시 작동하게 하려면 Game 컴포넌트에 handlePlay 함수를 구현하여야 한다.   
 원래는 setSquares를 호출했지만, 이제는 업데이트된 squares 배열을 onPlay로 전달된다.  
 
+## JS의 전개구문
 
-
+```js
+  function handlePlay(nextSquares) {
+    setHistory([...history, nextSquares]);
+    setXIsNext(!xIsNext);
+  }
+```
+history 앞에 있는 ...은 history에 있는 모든 항목을 포함하는 새 배열을 만들고   
+그 뒤에 nextSquares를 만드는 전개구문이다.   
+예를 들어 history가 [[null,null,null], ["X",null,null]]이고,   
+nextSquares 가 ["X",null,"O"]라면 새로운 [...history, nextSquares] 배열은   
+[[null,null,null], ["X",null,null], ["X",null,"O"]]이 되게 된다.    
 
 ---
 # 4월 17일 (7주차)
