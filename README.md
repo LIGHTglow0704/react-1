@@ -90,7 +90,7 @@ squares, move는 화살표 함수의 매개변수이다.
 moves 객체에 저장하여 최종 출력에 사용한다.   
 
 
-## 과거 움직임 보여주기 및 
+## 과거 움직임 보여주기
 ```js
   function jumpTo(nextMove) {
     // TODO
@@ -269,21 +269,19 @@ function Board({ xIsNext, squares, onPlay }) {
 }
 
 export default function Game() {
-  const [xIsNext, setXIsNext] = useState(true);
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const [currentMove, setCurrentMove] = useState(0);
+  const xIsNext = currentMove % 2 === 0;
   const currentSquares = history[currentMove];
 
   function handlePlay(nextSquares) {
     const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
     setHistory(nextHistory);
     setCurrentMove(nextHistory.length - 1);
-    setXIsNext(!xIsNext);
   }
 
   function jumpTo(nextMove) {
     setCurrentMove(nextMove);
-    setXIsNext(nextMove % 2 === 0);
   }
 
   const moves = history.map((squares, move) => {
@@ -331,9 +329,17 @@ function calculateWinner(squares) {
   }
   return null;
 }
-
 ```
+코드를 살펴보면 currentMove가 짝수일 때는 xIsNext === true가 되고,    
+currentMove가 홀수일 때는 xIsNext === false가 되는 것을 알 수 있다.    
+currentMove의 값을 알고 있다면 언제나 xIsNext가 무엇인지 알 수 있기에,   
+state를 모두 저장할 이유가 없다.    
+마지막으로 Game을 변경하여 더 이상 xIsNext를 별도의 state 변수로 저장하지 않고    
+currentMove를 기반으로 알아내도록 수정하였다.
 
+
+오늘은 이렇게 JS의 전개구문과 map 메서드, key를 선택하는 법에 대해 배웠고,    
+틱택토 프로그램의 시간여행을 구현하여 틱택토 게임의 최종 결과물을 완성했다.    
 
 ---
 # 4월 17일 (7주차)
