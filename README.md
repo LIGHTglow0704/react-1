@@ -74,10 +74,19 @@ nextSquares 가 ["X",null,"O"]라면 새로운 [...history, nextSquares] 배열�
 
 
 ## map 메서드
+```js
+const moves = history.map((squares, move) => { }
+```
 map의 기본 구문은 map(callbackFn) or map(callbackFn, thisArg)이다.   
 thisArg는 내부에서 this로 사용할 값을 지정하는데 화살표 함수에서는 이것이 생략된다.   
 따라서 이 예제에서는 화살표 함수가 callback 함수를 대신한다.    
 squares, move는 화살표 함수의 매개변수이다.  
+* 원본 배열 (history) : map이 호출된 원본 배열
+* 원본 배열의 인덱스 (move) : 현재 순환 중인 원본 배열 요소의 인덱스
+* 요소 값 (squares) : 현재 순회 중인 요소 배열의 값
+
+각각의 history 요소에 대한 { }의 실행문(후작업)을 실행하고,   
+moves 객체에 저장하여 최종 출력에 사용한다.   
 
 
 ## 과거 움직임 보여주기 및
