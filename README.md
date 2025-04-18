@@ -139,7 +139,7 @@ key가 지정되지 않은 경우, React는 경고를 표시하기에 위와 같
 <li>Ben: 5 tasks left</li>
 ```
 위와 같은 코드가   
-```html
+```js
 <li>Ben: 9 tasks left</li>
 <li>Claudia: 8 tasks left</li>
 <li>Alexa: 5 tasks left</li>
@@ -150,7 +150,7 @@ key가 지정되지 않은 경우, React는 경고를 표시하기에 위와 같
 하지만 React는 이것을 알지 못하기 때문에 key 프로퍼티를 리스트 항목에 지정하여   
 각 리스트 항목이 다른 항목과 다르다는 것을 구별해줘야한다.   
 
-```html
+```js
 <li key={user.id}>
   {user.name}: {user.taskCount} tasks left
 </li>
