@@ -4,13 +4,35 @@
 https://ko.react.dev/learn/tutorial-tic-tac-toe   
 참고 사이트   
 
-## 제목
+## state 한번 더 끌어올리기
+```js
+export default function Game() {
+  const [xIsNext, setXIsNext] = useState(true);
+  const [history, setHistory] = useState([Array(9).fill(null)]);
+  const currentSquares = history[history.length - 1];
+```
+현재 플레이에 대한 square를 렌더링하려면 history에서 마지막 squares의 배열을 읽어야한다.   
+렌더링 중에 게산할 수 있는 충분한 정보가 이미 있기에 useState는 필요없다.   
+ 
 
+```js
+  function handlePlay(nextSquares) {
+    // TODO
+  }
 
-
-
-
-
+  return (
+    <div className="game">
+      <div className="game-board">
+        <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+        //...
+  )
+}
+```
+게임이 다시 작동하게 하려면 Game 컴포넌트에 handlePlay 함수를 구현하여야 한다.   
+원래는 setSquares를 호출했지만, 이제는 업데이트된 squares 배열을 onPlay로 전달된다.  
+handlePlay 함수는 더 이상 호출할 수 있는 setSquares 함수가 없기에,   
+이 정보를 저장하기 위해 history state 변수를 만들어 사용한다.   
+또한 squares 배열을 history 항목으로 추가해서 업데이트한 뒤 xIsNext 값을 반전시켰다.   
 
 ---
 # 4월 17일 (7주차)
