@@ -11,6 +11,7 @@ export default function Game() {
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const currentSquares = history[history.length - 1];
 ```
+Board 컴포넌트 대신 Game 컴포넌트를 선언하고 최상위 컴포넌트로 사용하도록 지시했다.   
 현재 플레이에 대한 square를 렌더링하려면 history에서 마지막 squares의 배열을 읽어야한다.   
 또한 [Array(9).fill(null)]은 단일 항목배열이기에 9개의 null 배열이라는 뜻이다.   
 렌더링 중에 게산할 수 있는 충분한 정보가 이미 있기에 useState는 필요없다.   
@@ -28,7 +29,9 @@ export default function Game() {
   )
 }
 ```
-
+게임을 업데이트할 때 호출할 handlePlay 함수를 만든 후   
+xIsNext , currentSquares , handlePlay 를 Board 컴포넌트에 props로 전달할 수 있도록 만들었다.   
+게임이 다시 작동하게 하려면 Game 컴포넌트에 handlePlay 함수를 구현하여야 한다.   
 handlePlay 함수는 더 이상 호출할 수 있는 setSquares 함수가 없기에,   
 이 정보를 저장하기 위해 history state 변수를 만들어 사용한다.   
 또한 squares 배열을 history 항목으로 추가해서 업데이트한 뒤 xIsNext 값을 반전시켰다.   
@@ -48,7 +51,11 @@ function Board({ xIsNext, squares, onPlay }) {
     onPlay(nextSquares);
   }
 ```
-게임이 다시 작동하게 하려면 Game 컴포넌트에 handlePlay 함수를 구현하여야 한다.   
+Board 컴포넌트를 xIsNext, squares, 그리고 플레이어가 움직일 때마다 Board가 업데이트된   
+사각형을 배열로 호출할 수 있는 새로운 onPlay 함수를 props로 받도록 변경하였다.   
+이제 Board 컴포넌트의 handleClick에 있는 setSquares 및 setXIsNext 호출을    
+새로운 onPlay 함수에 대한 단일 호출로 대체함으로써 사용자가 사각형을 클릭할 때    
+Game 컴포넌트가 Board를 업데이트할 수 있게 된다.   
 원래는 setSquares를 호출했지만, 이제는 업데이트된 squares 배열을 onPlay로 전달된다.  
 
 ## JS의 전개구문
@@ -66,6 +73,10 @@ nextSquares 가 ["X",null,"O"]라면 새로운 [...history, nextSquares] 배열�
 [[null,null,null], ["X",null,null], ["X",null,"O"]]이 되게 된다.    
 
 ## 과거 움직임 보여주기 및 map 메서드
+```js
+[1, 2, 3].map((x) => x * 2) // [2, 4, 6]
+```
+JS에서 한 배열을 다른 배열로 변환할려면 위와 같은 map 메서드를 이용하면 된다.   
 ```js
   function jumpTo(nextMove) {
     // TODO
@@ -87,10 +98,9 @@ nextSquares 가 ["X",null,"O"]라면 새로운 [...history, nextSquares] 배열�
 ```
 React에서 여러 엘리먼트를 렌더링하려면 React 엘리먼트 배열을 사용할 수 있다.   
 이미 state에 이동 history 배열이 있기 때문에 이것을 React 엘리먼트 배열로 변환해야한다. 
-```js
-[1, 2, 3].map((x) => x * 2) // [2, 4, 6]
-```
-JS에서 한 배열을 다른 배열로 변환할려면 위와 같은 map 메서드를 이용하면 된다.   
+map을 이용해 history를 화면의 버튼을 나타내는 React 엘리먼트로 변환하고,   
+과거로 이동할 수 있도록 onClick 버튼을 만들어 옆에 띄워준다.   
+
 
 
 
