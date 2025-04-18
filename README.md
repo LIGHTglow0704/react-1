@@ -115,7 +115,7 @@ React에서 여러 엘리먼트를 렌더링하려면 React 엘리먼트 배열�
 map을 이용해 history를 화면의 버튼을 나타내는 React 엘리먼트로 변환하고,   
 과거로 이동할 수 있도록 onClick 버튼을 만들어 옆에 띄워준다.   
 
-하지만 이런식으로 코드를 짠다면
+하지만 코드를 실행하게 된다면
 ```
 Each child in a list should have a unique "key" prop.
 ```
