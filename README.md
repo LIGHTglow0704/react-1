@@ -95,6 +95,17 @@ JS에서 한 배열을 다른 배열로 변환할려면 위와 같은 map 메서
 
 
 
+
+
+
+하지만 이런식으로 코드를 짠다면
+```
+Each child in a list should have a unique "key" prop.
+```
+이와 같은 형태로 
+
+
+
 ---
 # 4월 17일 (7주차)
 
