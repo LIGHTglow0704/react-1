@@ -1,5 +1,182 @@
 # 이정윤 202130423
 ---
+# 5월 8일 (10주차)
+https://ko.react.dev/learn/thinking-in-react
+참고 사이트
+
+## React로 사고하기
+React로 사용자 인터페이스를 빌드할 때, 먼저 이를 **컴포넌트**라는 조각으로 나눈다.   
+그리고 각 컴포넌트의 다양한 시각적 상태들을 정의한다.   
+마지막으로 컴포넌트들을 연결하여 데이터가 그 사이를 흘러가게 한다.
+
+## 모의시안과 함께 시작하기
+### Step 1: UI를 컴포넌트 계층으로 쪼개기 
+* Programming :
+  단일 책임 원칙(캡슐화)를 반영하고자 한다면 컴포넌트는 이상적으로 한 번에 한 가지 일만 해야한다.
+* CSS :
+  클래스 선택자를 무엇으로 어떻게 만들지 생각하자.
+* Design :
+  디자인 계층을 어떤 식으로 구성할 지 미리 생각해보자.
+
+JSON이 잘 구조화 되어있다면, UI 컴포넌트 구조가 자연스럽게 데이터 모델에 대응 된다는걸   
+알 수 있다. 이는 UI와 데이터 모델이 보통 같은 구조를 가지기 때문이다.   
+UI를 컴포너트로 분리하고, 각 컴포넌트가 데이터 모델에 매칠 될 수 있도록 한다면   
+더 쉽게 UI를 분리하고 자연스럽게 구현할 수 있다.   
+
+
+![image](https://github.com/user-attachments/assets/fe5ec3a9-4a49-4eef-a3d8-015447e08ab4)   
+1. FilterableProductTable(회색): 예시 전체를 포괄한다.
+2. SearchBar(파란색): 사용자의 입력을 받는다.
+3. ProductTable(라벤더색): 데이터 리스트를 보여주고, 사용자의 입력을 기반으로 필터링한다.
+4. ProductCategoryRow(초록색): 각 카테고리의 헤더를 보여준다.
+5. ProductRow(노란색): 각각의 제품에 해당하는 행을 보여준다.
+
+ProductTable을 보면 “Name”과 “Price” 레이블을 포함한 테이블 헤더 기능만을 가진 컴포넌트는 없다.   
+독립된 컴포넌트를 따로 생성할 지 생성하지 않을지는 내 선택이며, 이 예시에서는 ProductTable의   
+위의 단순한 헤더들이 ProductTable의 일부이기 때문에 위 레이블들을 컴포넌트로 만들지 않고 그냥 남겨두었다.   
+그러나 이 헤더가 복잡해지면 (정렬 기능 등) ProductTableHeader 컴포넌트를 만드는 것이 더 합리적이다.   
+
+### Step 2: React로 정적인 버전 구현하기 
+가장 쉬운 접근 방법은 상호작용 기능보다 먼저 데이터 모델로부터 UI를 렌더링하는 버전을 만드는 것이다.   
+먼저 정적인 버전을 만들고 상호작용 기능을 추가하는 게 타이핑이 필요하지만 생각할 것이 적다.   
+반대로 상호작용 기능을 먼저 추가하면, 많은 생각이 필요하지만 타이핑이 많이 필요하지 않다.   
+데이터 모델을 렌더링 하는 앱의 정적인 버전을 만들기 위해서는   
+다른 컴포넌트를 재사용하고 props로 데이터를 넘겨주는 컴포넌트를 구현하는게 좋다.   
+* props는 부모가 자식에게 데이터를 넘겨줄 때 사용할 수 있는 방법이다.   
+
+정적인 버전을 구현할 때는 **state를 사용하면 복잡해지기 때문에 쓰지 않는것**이 좋다.   
+만드는 방법으로는   
+1. FilterableProductTable 부터 시작하는 **하향식(top-down)** 과
+5. ProductRow 부터 시작하는 **상향식(bottom-up)** 이 있다.
+
+**간단한 예시에서는 보통 하향식**으로 만드는 게 쉽지만,   
+**프로젝트가 커지면 상향식**으로 만드는게 개발하기가 더 쉽다.   
+
+### component 구현하기
+```js
+function ProductCategoryRow({ category }) {
+  return (
+    <tr>
+      <th colSpan="2">
+        {category}
+      </th>
+    </tr>
+  );
+}
+
+function ProductRow({ product }) {
+  const name = product.stocked ? product.name :
+    <span style={{ color: 'red' }}>
+      {product.name}
+    </span>;
+
+  return (
+    <tr>
+      <td>{name}</td>
+      <td>{product.price}</td>
+    </tr>
+  );
+}
+
+function ProductTable({ products }) {
+  const rows = [];
+  let lastCategory = null;
+
+  products.forEach((product) => {
+    if (product.category !== lastCategory) {
+      rows.push(
+        <ProductCategoryRow
+          category={product.category}
+          key={product.category} />
+      );
+    }
+    rows.push(
+      <ProductRow
+        product={product}
+        key={product.name} />
+    );
+    lastCategory = product.category;
+  });
+
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>{rows}</tbody>
+    </table>
+  );
+}
+
+export default function App() {
+
+  return (
+    <>
+    <FilterableProductTable products={PRODUCTS} />
+    </>
+  );
+}
+
+
+function FilterableProductTable({ products }) {
+  return (
+    <div>
+      <SearchBar />
+      <ProductTable products={products} />
+    </div>
+  );
+}
+
+function SearchBar() {
+  return (
+    <form>
+      <input type="text" placeholder="Search..." />
+      <label>
+        <input type="checkbox" />
+        {' '}
+        Only show products in stock
+      </label>
+    </form>
+  );
+}
+
+const PRODUCTS = [
+  {category: "Fruits", price: "$1", stocked: true, name: "Apple"},
+  {category: "Fruits", price: "$1", stocked: true, name: "Dragonfruit"},
+  {category: "Fruits", price: "$2", stocked: false, name: "Passionfruit"},
+  {category: "Vegetables", price: "$2", stocked: true, name: "Spinach"},
+  {category: "Vegetables", price: "$4", stocked: false, name: "Pumpkin"},
+  {category: "Vegetables", price: "$1", stocked: true, name: "Peas"},
+];
+```
+
+데이터 모델을 렌더링하는 앱의 정적인 버전을 만들기 위해서 다른 컴포넌트를 재사용하고   
+**props**을 이용하여 데이터를 넘겨주는 컴포넌트를 구현했다.   
+또한 정적 버전을 만들고 있기 때문에 state는 사용하지 않았다.     
+
+### Step 3: 최소한의 데이터만 이용해서 완벽하게 UI State 표현하기
+UI를 상호작용(interactive)하게 만들려면, 사용자가 기반 데이터 모델을 변경할 수 있게 해야한다.   
+React는 state를 통해 기반 데이터 모델을 변경할 수 있게 한다.   
+
+state는 앱이 기억해야 하는, **변경할 수 있는 최소 집합**이다.    
+state를 구조화 하는데 가장 중요한 원칙은 **중복배제원칙(Don't Repeat Yourself)** 이다.   
+
+React는 props와 state라는 두 개의 데이터 **모델**이 존재한다.
+* Props는 함수를 통해 전달되는 인자 같은 성격을 가진다.
+  props는 부모 컴포넌트로부터 자식 컴포넌트로 데이터를 넘겨서 외관을 커스터마이징하게 해준다.
+  예를 들어, Form은 color라는 prop을 Button으로 보내서 Button을 내가 원하는 형태로 커스터마이징시킬 수 있다.
+* State는 컴포넌트의 메모리 같은 성격을 가진다.
+  state는 컴포넌트가 몇몇 정보를 계속 따라갈 수 있게 해주고 변화하면서 상호작용(interaction)을 만들어 낸다.
+  예를 들어, Button은 isHovered라는 state를 따라간다.   
+
+
+오늘은 이렇게 UI를 컴포넌트 계층으로 쪼개서 구현하는 방법과   
+정적인 버전을 구현할때 주의점과 어떻게 개발해야하는지를 배웠다.   
+
+---
 # 4월 18일 (9주차)
 https://ko.react.dev/learn/tutorial-tic-tac-toe   
 참고 사이트   
