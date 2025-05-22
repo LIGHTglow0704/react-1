@@ -87,7 +87,14 @@ npx create-rsbuild --template react
   - Rsbuild는 Rspack 기반 빌드 도구로 세심하게 조정된 기본 설정과 성능 최적화 기능을 바로 사용할 수 있도록 제공한다.
   - Rsbuild는 빠른 새로고침, JSX, TypeScript, 스타일링 등 React 기능을 기본적으로 지원한다.
 
-
+* Next.js (앱 라우터)
+  ```bash
+  npx create-next-app@latest
+  ```
+  - 풀 스택 React 앱을 활성화하는 React 프레임워크다.
+  - Next.js는 **Vercel**에서 유지 관리한다.
+  - Vercel은 Opt-in(옵트-인), 예를 들어 AWS처럼 유료 클라우드 서비스를 지원한다.  
+  - 앱을 빌드해서 Node.js와 서버리스 호스팅 혹은 자체 서버에 배포할 수 있다.
 
 
 ---
