@@ -32,7 +32,11 @@ React로 앱이나 웹사이트를 구축할려면 **프레임워크 부터 시�
   - Next.js는 **Vercel**에서 유지 관리한다.
   - Vercel은 Opt-in(옵트-인), 예를 들어 AWS처럼 유료 클라우드 서비스를 지원한다.  
   - 앱을 빌드해서 Node.js와 서버리스 호스팅 혹은 자체 서버에 배포할 수 있다.
-  -  
+
+* React Rounter (v7)
+  ```git
+  npx create-react-router@latest
+  ```
 
 
 
