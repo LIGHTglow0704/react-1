@@ -25,7 +25,7 @@ React로 앱이나 웹사이트를 구축할려면 **프레임워크 부터 시�
 여기서 CDN이란 외부링크를 통해서 해당 프레임워크를 간편하게 도와주는 네트워크 기술이다.   
 
 * Next.js (앱 라우터)
-  ```git
+  ```bash
   npx create-next-app@latest
   ```
   - 풀 스택 React 앱을 활성화하는 React 프레임워크다.
@@ -34,7 +34,7 @@ React로 앱이나 웹사이트를 구축할려면 **프레임워크 부터 시�
   - 앱을 빌드해서 Node.js와 서버리스 호스팅 혹은 자체 서버에 배포할 수 있다.
 
 * React Rounter (v7)
-  ```git
+  ```bash
   npx create-react-router@latest
   ```
   - React Router는 **React에서 가장 인기인는 라우팅 라이브러리**이며
