@@ -88,7 +88,7 @@ React로 앱이나 웹사이트를 구축할려면 **프레임워크 부터 시�
   - Rsbuild는 빠른 새로고침, JSX, TypeScript, 스타일링 등 React 기능을 기본적으로 지원한다.
 
 
-* [React Native용 Metro]
+* [React Native용 Metro]    
 React Native를 처음부터 사용하려면 React Native용 JavaScript 번들러인 Metro를 사용해야한다.   
 Metro는 ios 및 Android와 같은 플랫폼에 대한 번들링을 지원하지만, 여기 소개된 도구에 비해 기능이 부족하다.   
 프로젝트에 React Native 지원이 필요하지 않다면 Vite, Parcel 또는 Rs bulid로 시작하는 것이 좋다   
