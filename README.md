@@ -9,6 +9,7 @@ https://ko.react.dev/learn/creating-a-react-app
 React는 **점진적으로 적용할 수 있도록 설계**되어, **필요한 만큼 React를 사용**할 수 있다.   
 React로 **간단한 HTML 페이지에 약간의 상호작용을 추가**하거나, **복잡한 React 기반의 앱**을    
 만들고자 하는 경우 사용하면 좋다.     
+
 단순히 React를 사용하고 싶다면 local에서 Node.js만 설치하면 되지만,     
 설치하지 않아도 위 사이트에서 온라인 코드 샌드박스를 사용하면 쉽게 React를 체험해 볼 수 있다.   
 위 사이트가 아니여도 RCodeSandbox, StackBlitz, CodePen 등의 온라인 샌드박스에서 React를 지원한다.   
