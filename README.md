@@ -1,7 +1,8 @@
 # 이정윤 202130423
 ---
 # 5월 22일 (12주차)
-https://ko.react.dev/learn/installation
+https://ko.react.dev/learn/installation   
+https://ko.react.dev/learn/creating-a-react-app   
 참고 사이트
 
 ## 프로젝트에 도입하기 (Installation)
@@ -17,7 +18,7 @@ React로 **간단한 HTML 페이지에 약간의 상호작용을 추가**하거�
 
 ---
 # 5월 15일 (11주차)
-https://ko.react.dev/learn/thinking-in-react
+https://ko.react.dev/learn/thinking-in-react   
 참고 사이트
 
 ### Step 4: State가 어디에 있어야 할 지 정하기
