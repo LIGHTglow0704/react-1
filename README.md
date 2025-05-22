@@ -68,24 +68,24 @@ React로 앱이나 웹사이트를 구축할려면 **프레임워크 부터 시�
 ```bash
 npm create vite@latest my-app -- --template react
 ```
-- Vite는 모던 웹 프로젝트에서 **빠르고 간결한 개발 환경을 제공하는 것**을 목표로 하는 빌드 도구이다.
-- Vite에는 빠른 새로고침, JSX, Babel/SWC 및 기타 일반적인 기능을 지원하는 풍부한 플러그인 에코시스템이 있다.
-- 제일 많이 쓰는 빌드 도구로 빠른 빌드 도구로 인기가 많다.
+  - Vite는 모던 웹 프로젝트에서 **빠르고 간결한 개발 환경을 제공하는 것**을 목표로 하는 빌드 도구이다.
+  - Vite에는 빠른 새로고침, JSX, Babel/SWC 및 기타 일반적인 기능을 지원하는 풍부한 플러그인 에코시스템이 있다.
+  - 제일 많이 쓰는 빌드 도구로 빠른 빌드 도구로 인기가 많다.
 
 * Parcel
 ```bash
 npm install --save-dev parcel
 ```
-- Parcel은 뛰어난 기본 개발 경험과 확장 가능한 아키텍처를 결합하여 프로젝트를 시작 단계에서
-  대규모 프로덕션 애플리케이션으로 발전 시킬 수 있다.
-- Parcel은 빠른 새로고침, JSX, TypeScript, flow 및 스타일링을 기본적으로 지원한다.
+  - Parcel은 뛰어난 기본 개발 경험과 확장 가능한 아키텍처를 결합하여 프로젝트를 시작 단계에서
+    대규모 프로덕션 애플리케이션으로 발전 시킬 수 있다.
+  - Parcel은 빠른 새로고침, JSX, TypeScript, flow 및 스타일링을 기본적으로 지원한다.
   
 * Rsbuild
 ```bash
 npx create-rsbuild --template react
 ```
-- Rsbuild는 Rspack 기반 빌드 도구로 세심하게 조정된 기본 설정과 성능 최적화 기능을 바로 사용할 수 있도록 제공한다.
-- Rsbuild는 빠른 새로고침, JSX, TypeScript, 스타일링 등 React 기능을 기본적으로 지원한다.
+  - Rsbuild는 Rspack 기반 빌드 도구로 세심하게 조정된 기본 설정과 성능 최적화 기능을 바로 사용할 수 있도록 제공한다.
+  - Rsbuild는 빠른 새로고침, JSX, TypeScript, 스타일링 등 React 기능을 기본적으로 지원한다.
 
 
 
