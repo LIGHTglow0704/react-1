@@ -26,7 +26,7 @@ React로 앱이나 웹사이트를 구축할려면 **프레임워크 부터 시�
 
 * Next.js (앱 라우터)
   ```bash
-  npx create-next-app@latest
+  $ npx create-next-app@latest
   ```
   - 풀 스택 React 앱을 활성화하는 React 프레임워크다.
   - Next.js는 **Vercel**에서 유지 관리한다.
@@ -35,7 +35,7 @@ React로 앱이나 웹사이트를 구축할려면 **프레임워크 부터 시�
 
 * React Rounter (v7)
   ```bash
-  npx create-react-router@latest
+  $ npx create-react-router@latest
   ```
   - React Router는 **React에서 가장 인기인는 라우팅 라이브러리**이며
     **Vite와 함께 사용하면 풀스택 React 프레임워크를 만들 수 있다.**
