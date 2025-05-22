@@ -65,6 +65,7 @@ React로 앱이나 웹사이트를 구축할려면 **프레임워크 부터 시�
 로컬 개발을 위한 개발 서버와 앱을 프로덕션 서버에 배포하는 빌드 명령을 제공한다.
 
 * Vite
+  -ㅁㄴㅇㄹ
 ```bash
 npm create vite@latest my-app -- --template react
 ```
