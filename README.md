@@ -72,7 +72,7 @@ React로 앱이나 웹사이트를 구축할려면 **프레임워크 부터 시�
   + Vite에는 빠른 새로고침, JSX, Babel/SWC 및 기타 일반적인 기능을 지원하는 풍부한 플러그인 에코시스템이 있다.
   + 제일 많이 쓰는 빌드 도구로 빠른 빌드 도구로 인기가 많다.
 
-  * Parcel
+* Parcel
   ```bash
   npm install --save-dev parcel
   ```
