@@ -73,6 +73,19 @@ https://ko.react.dev/learn/build-a-react-app-from-scratch
    **코드를 모듈로 분리**한 다음, **npm 패키지** 레지스트리의 패키지(예시: React)를 사용한다.
 2. 해당 페이지에서 **원하는 위치에 React 컴포넌트를 렌더링**한다.
 
+## 1단계 : 모듈 자바스크립트 환경 설정하기
+
+
+
+
+
+
+
+
+
+오늘은 애플리케이션의 성능을 개선하고 기존 프로젝트에 React를 추가하여 React를 사용하는 방법에 대해       
+배웠다.
+
 ---
 # 5월 22일 (12주차)
 https://ko.react.dev/learn/installation   
