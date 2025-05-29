@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/3d705cfa-8c56-4852-af57-e6aff625fcdf)# 이정윤 202130423
+# 이정윤 202130423
 ---
 # 5월 29일 (13주차)
 https://ko.react.dev/learn/build-a-react-app-from-scratch    
