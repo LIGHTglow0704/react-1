@@ -50,8 +50,8 @@ https://ko.react.dev/learn/build-a-react-app-from-scratch
 
 ### 기존 웹사이트의 전체 하위 경로에 React 사용
 * Rails와 같은 **다른 서버 기술로 구축 한 기존 웹 앱(example.com)**이 있고,        
-  **example.com/some-app/로 시작하는 경로가 있다고 가정하고, 이것으로 시작하는 모든 경로를 React로
-  완전히 구현하고 싶다고 가정해보자**
+  **example.com/some-app/로 시작하는 경로가 있다고 가정하고, 이것으로 시작하는 모든 경로를          
+  React로 완전히 구현하고 싶다고 가정해보자**
 
 1. **React 기반 프레임워크 중 하나를 사용**하여 앱의 **React 부분을 빌드**한다.
 2. 프레임워크 설정에서 **기본 경로를 /some-app로 지정**한다
