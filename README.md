@@ -93,7 +93,6 @@ npm install react react-dom
 
 
 
-
 오늘은 애플리케이션의 성능을 개선하고 기존 프로젝트에 React를 추가하여 React를 사용하는 방법에 대해       
 배웠다.
 
