@@ -105,6 +105,29 @@ export default function MyApp() {
 **타입 검사를 받으려면,** **TypeScript Playground**를 사용하거나       
 더 완전한 기능을 갖춘 온라인 샌드박스를 사용할 수 있다.
 
+```js
+interface MyButtonProps {
+  /** 버튼 안에 보여질 텍스트 */
+  title: string;
+  /** 버튼이 상호작용할 수 있는지 여부 */
+  disabled: boolean;
+}
+
+function MyButton({ title, disabled }: MyButtonProps) {
+  return (
+    <button disabled={disabled}>{title}</button>
+  );
+}
+
+export default function MyApp() {
+  return (
+    <div>
+      <h1>Welcome to my app</h1>
+      <MyButton title="I'm a disabled button" disabled={true}/>
+    </div>
+  );
+}
+```
 
 
 
