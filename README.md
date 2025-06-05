@@ -2,15 +2,22 @@
 ---
 # 6월 5일 (14주차)
 https://ko.react.dev/learn/build-a-react-app-from-scratch    
+https://ko.react.dev/learn/add-react-to-an-existing-project    
 참고 사이트
 
 ## 2단계 : 페이지 어디에서든 React 컴포넌트 렌더링하기
 
+2단계: 공통 애플리케이션 패턴 빌드 
+위에 나열된 빌드 도구는 클라이언트 전용 단일 페이지 앱(SPA)으로 시작하지만 라우팅, 데이터 가져오기 또는 스타일링과 같은 일반적인 기능을 위한 추가 솔루션은 포함되지 않습니다.
 
+React 생태계에는 이러한 문제를 해결할 수 있는 많은 도구가 포함되어 있습니다. 시작점으로 널리 사용되는 몇 가지를 나열했지만, 자신에게 더 적합한 도구가 있다면 자유롭게 다른 도구를 선택해도 됩니다.
+
+라우팅 
 
 ---
 # 5월 29일 (13주차)
 https://ko.react.dev/learn/build-a-react-app-from-scratch    
+https://ko.react.dev/learn/add-react-to-an-existing-project
 참고 사이트
 
 ### 애플리케이션 성능 개선
@@ -98,6 +105,16 @@ https://ko.react.dev/learn/build-a-react-app-from-scratch
    - 설정이 제대로 동작하는지 확인하려면 프로젝트 폴더에서 아래 명령어를 실행한다.
 ```bash
 npm install react react-dom
+```
+```js
+import { createRoot } from 'react-dom/client';
+
+// 기존 HTML 컨텐츠를 지웁니다.
+document.body.innerHTML = '<div id="app"></div>';
+
+// 대신에 여러분이 작성한 React 컴포넌트를 렌더링합니다.
+const root = createRoot(document.getElementById('app'));
+root.render(<h1>Hello, world</h1>);
 ```
 
 
