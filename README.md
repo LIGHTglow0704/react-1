@@ -80,8 +80,38 @@ npm install @types/react @types/react-dom
 2. jsx를 유효한 옵션 중 하나로 설정해야 한다. 대부분의 애플리케이션에서는 preserve로 충분하다.
 
 #### React 컴포넌트가 있는 TypeScript 
-**JSX를 포함하고 있는 모든 파일은 .tsx 파일 확장자를 사용해야 한다.       
-이는 이 파일이 JSX를 포함하고 있음을 TypeScript에 알려주는 TypeScript 전용 확장자다.**
+**JSX를 포함**하고 있는 모든 파일은 **.tsx 파일 확장자를 사용**해야 한다.        
+이것은 이 파일이 JSX를 포함하고 있음을 TypeScript에 알려주는 TypeScript 전용 확장자다.            
+React와 함께 TypeScript를 작성하는 것은 React와 함께 JavaScript를 작성하는 것과 매우 유사하다.
+
+```js
+function MyButton({ title }: { title: string }) {
+  return (
+    <button>{title}</button>
+  );
+}
+
+export default function MyApp() {
+  return (
+    <div>
+      <h1>Welcome to my app</h1>
+      <MyButton title="I'm a button" />
+    </div>
+  );
+}
+```
+위 코드 샌드박스는 ypeScript 코드를 다룰 수는 있지만 **타입을 검사하지는 않는다.**    
+즉, TypeScript 샌드박스를 수정하여 학습할 수는 있지만 **타입 오류나 경고는 발생하지 않는다.**       
+**타입 검사를 받으려면,** **TypeScript Playground**를 사용하거나       
+더 완전한 기능을 갖춘 온라인 샌드박스를 사용할 수 있다.
+
+
+
+
+
+
+
+
 
 ---
 # 5월 29일 (13주차)
