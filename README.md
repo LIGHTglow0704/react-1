@@ -76,7 +76,7 @@ TypeScript는 JavaScript 코드 베이스에 타입 정의를 추가하는 데 �
 npm install @types/react @types/react-dom
 ```
 다음 컴파일러 옵션을 tsconfig.json에 설정해야 한다.
-1. dom은 lib에 포함되어야 한다(주의: lib 옵션이 지정되지 않으면, 기본적으로 dom이 포함된다).
+1. dom은 lib에 포함되어야 한다.(주의: lib 옵션이 지정되지 않으면, 기본적으로 dom이 포함된다)
 2. jsx를 유효한 옵션 중 하나로 설정해야 한다. 대부분의 애플리케이션에서는 preserve로 충분하다.
 
 #### React 컴포넌트가 있는 TypeScript 
