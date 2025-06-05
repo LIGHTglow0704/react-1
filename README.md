@@ -4,7 +4,7 @@
 https://ko.react.dev/learn/add-react-to-an-existing-project    
 참고 사이트
 
-## 2단계 : 페이지 어디에서든 React 컴포넌트 렌더링하기
+### 2단계 : 페이지 어디에서든 React 컴포넌트 렌더링하기
 
 ```js
 import { createRoot } from 'react-dom/client';
@@ -38,7 +38,21 @@ root.render(<NavigationBar />);
 
 
 
-## 프로젝트 도입하기
+## 에디터 설정하기
+* VS Code
+VS Code는 현재 가장 많이 사용하는 에디터 중 하나이다. 
+VS Code에 설치할 수 있는 확장(Extension)의 종류는 무수히 많으며, 깃허브(GitHub)와 같은 외부 서비스와의 연동도 지원한다.
+아래에 나열한 기능들은 대부분 확장(Extension)으로 존재하기 때문에 VS Code의 설정을 다양한 방식으로 쉽게 변경할 수 있다.
+
+이 외에도
+* WebStorm
+  자바스크립트(JavaScript)에 특화되어 설계된 통합 개발 환경이다.
+* Sublime Text
+  JSX와 타입스크립트(TypeScript)를 지원하며 문법 강조 및 자동 완성 기능이 내장되어 있다.
+* Vim
+  모든 종류의 텍스트를 매우 효율적으로 생성하고 변경할 수 있도록 설계된 텍스트 편집기다.
+등이 있다.
+
 
 ---
 # 5월 29일 (13주차)
@@ -115,7 +129,7 @@ https://ko.react.dev/learn/add-react-to-an-existing-project
    **코드를 모듈로 분리**한 다음, **npm 패키지** 레지스트리의 패키지(예시: React)를 사용한다.
 2. 해당 페이지에서 **원하는 위치에 React 컴포넌트를 렌더링**한다.
 
-## 1단계 : 모듈 자바스크립트 환경 설정하기
+### 1단계 : 모듈 자바스크립트 환경 설정하기
 * **모듈 자바스크립트 환경**은 모든 코드를 한 파일에 작성하는 것이 아닌, **각각의 React 컴포넌트를             
   개별 파일로 작성**할 수 있게 한다.
 * 또한 (React 자체를 포함한) 다른 개발자들이 **npm 레지스트리에 배포한 훌륭한 배키지들을 모두 사용**할 수 있다.
@@ -138,7 +152,7 @@ import { createRoot } from 'react-dom/client';
 // 기존 HTML 컨텐츠를 지웁니다.
 document.body.innerHTML = '<div id="app"></div>';
 
-// 대신에 여러분이 작성한 React 컴포넌트를 렌더링합니다.
+// 대신에 내가 작성한 React 컴포넌트를 렌더링합니다.
 const root = createRoot(document.getElementById('app'));
 root.render(<h1>Hello, world</h1>);
 ```
