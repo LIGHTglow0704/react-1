@@ -71,6 +71,12 @@ TypeScript는 JavaScript 코드 베이스에 타입 정의를 추가하는 데 �
 기본적으로 TypeScript는 JSX를 지원하며, @types/react 및 @types/react-dom을 추가하면        
 완전한 React Web 지원을 받을 수 있다.
 
+#### 기존 React 프로젝트에 TypeScript 추가하기
+```bash
+npm install @types/react @types/react-dom
+```
+1. dom은 lib에 포함되어야 한다(주의: lib 옵션이 지정되지 않으면, 기본적으로 dom이 포함된다).
+2. jsx를 유효한 옵션 중 하나로 설정해야 한다. 대부분의 애플리케이션에서는 preserve로 충분하다.
 
 
 
