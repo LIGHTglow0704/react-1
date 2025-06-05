@@ -78,8 +78,9 @@ npm install @types/react @types/react-dom
 1. dom은 lib에 포함되어야 한다(주의: lib 옵션이 지정되지 않으면, 기본적으로 dom이 포함된다).
 2. jsx를 유효한 옵션 중 하나로 설정해야 한다. 대부분의 애플리케이션에서는 preserve로 충분하다.
 
-
-
+#### React 컴포넌트가 있는 TypeScript 
+**JSX를 포함하고 있는 모든 파일은 .tsx 파일 확장자를 사용해야 한다.       
+이는 이 파일이 JSX를 포함하고 있음을 TypeScript에 알려주는 TypeScript 전용 확장자다.**
 
 ---
 # 5월 29일 (13주차)
