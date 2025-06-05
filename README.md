@@ -32,6 +32,9 @@ root.render(<NavigationBar />);
 이렇게 하면 document.getElementById로 HTML 엘리먼트를 찾아 createRoot에 전달함으로써     
 해당 요소 내부에 React 컴포넌트를 렌더링할 수 있다.
 
+기존 프로젝트에서 React를 도입할 때, 일반적으로 작은 상호작용 컴포넌트(예시: 버튼)에서 시작하여    
+점진적으로 “상위 구조로 확장하면서” 결국에는 전체 페이지가 React로 빌드될 때까지 이 과정을 반복하게 된다. 이 지점에 도달한다면 React의 장점을 최대한 활용하기 위해 React 프레임워크로 마이그레이션하는 것을 권장합니다.
+
 
 
 ---
@@ -125,6 +128,16 @@ https://ko.react.dev/learn/add-react-to-an-existing-project
    - 설정이 제대로 동작하는지 확인하려면 프로젝트 폴더에서 아래 명령어를 실행한다.
 ```bash
 npm install react react-dom
+```
+```js
+import { createRoot } from 'react-dom/client';
+
+// 기존 HTML 컨텐츠를 지웁니다.
+document.body.innerHTML = '<div id="app"></div>';
+
+// 대신에 여러분이 작성한 React 컴포넌트를 렌더링합니다.
+const root = createRoot(document.getElementById('app'));
+root.render(<h1>Hello, world</h1>);
 ```
 
 
