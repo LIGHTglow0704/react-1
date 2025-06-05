@@ -136,17 +136,17 @@ export default function MyApp() {
 3. 해당 레포지토리의 Settings/Pages 안에 None을 Main으로 바꾼다.
 4. package.json안에     
   "homepage": "https://(깃허브 닉네임).github.io/(레포지토리 이름)/",      
-  "name": "react-5",       
-  "version": "0.1.0",      
+  "name": "react-5",               
+  "version": "0.1.0",               
 
- "scripts": {
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
-}
-를 추가한 뒤 Push한다.
-5. npm i gh-pages 명령어를 사용한다.
-6. 해당 레포지토리의 Settings/Pages 안에 Main을 gh-pages로 바꾼다.
-7. 브라우저에 https://(깃허브 닉네임).github.io/(레포지토리 이름)/ 주소를 입력하면 배포된다.
+ "scripts": {             
+  "predeploy": "npm run build",              
+  "deploy": "gh-pages -d build"              
+}               
+를 추가한 뒤 Push한다.            
+5. npm i gh-pages 명령어를 사용한다.       
+6. 해당 레포지토리의 Settings/Pages 안에 Main을 gh-pages로 바꾼다.        
+7. 브라우저에 https://(깃허브 닉네임).github.io/(레포지토리 이름)/ 주소를 입력하면 배포된다.    
 
 
 ---
