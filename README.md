@@ -66,7 +66,10 @@ VS Code에 설치할 수 있는 확장(Extension)의 종류는 무수히 많으�
   전부 설정에 부합하도록 수정된다.       
   파일을 저장할 때마다 Prettier가 자동 실행되어 이러한 작업들을 수행해 주는 것이 가장 이상적인 설정이다.      
 
-
+### TypeScript 사용하기
+TypeScript는 JavaScript 코드 베이스에 타입 정의를 추가하는 데 널리 사용되는 방법이다.      
+기본적으로 TypeScript는 JSX를 지원하며, @types/react 및 @types/react-dom을 추가하면        
+완전한 React Web 지원을 받을 수 있다.
 
 
 
